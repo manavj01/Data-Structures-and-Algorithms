@@ -20,8 +20,8 @@ public class Wave_Traversal_Wakanda_1 {
         for (int j = 0; j < arr[0].length; j++) {
 
             if (j % 2 == 0) {
-                for (int i = 0; i < arr.length; i++) {
-                    System.out.println(arr[i][j]);
+                for (int[] ints : arr) {
+                    System.out.println(ints[j]);
                 }
             } else {
                 for (int i = arr.length - 1; i >= 0; i--) {
