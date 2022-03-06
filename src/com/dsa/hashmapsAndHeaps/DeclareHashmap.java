@@ -1,4 +1,4 @@
-package com.dsa.hashmaps;
+package com.dsa.hashmapsAndHeaps;
 
 import java.util.HashMap;
 import java.util.Set;
