@@ -39,7 +39,6 @@ public class PriorityQueueUsingHeap {
                 swap(0,data.size()-1);
                  int val = data.remove(data.size()-1);
                 downheapify(0);
-
                 return val;
 
         }
@@ -69,7 +68,7 @@ public class PriorityQueueUsingHeap {
         }
 
         public int size() {
-            return data.size()-1;
+            return data.size();
         }
     }
 
