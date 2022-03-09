@@ -19,7 +19,7 @@ public class PrintDecreasing {
         Scanner scn = new Scanner(System.in);
         int n= scn.nextInt();
         scn.close();
-        System.out.println("\n");
+
         printDec(n);
     }
 }
