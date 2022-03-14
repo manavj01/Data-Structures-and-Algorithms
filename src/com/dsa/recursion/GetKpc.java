@@ -11,7 +11,7 @@ public class GetKpc {
         ArrayList<String> result = getKPC(str);
         System.out.println(result);
     }
-    static String[] codes ={".,","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+    static String[] codes ={".;","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
     public static ArrayList<String> getKPC(String str){
 
         if(str.length()==0){
