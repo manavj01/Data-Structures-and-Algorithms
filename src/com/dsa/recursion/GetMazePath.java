@@ -12,15 +12,34 @@ public class GetMazePath {
         System.out.println(res);
 
     }
-
     // sr - source row
     // sc - source column
     // dr - destination row
     // dc - destination column
     public static ArrayList<String> getMazePaths(int sr, int sc, int dr, int dc) {
-        return null;
 
+      if(sr==dr && sc==dc){
+          ArrayList<String> bres = new ArrayList<>();
+          bres.add("");
+          return bres;
+      }
+        ArrayList<String> vPath= new ArrayList<>();
+        ArrayList<String> hPath = new ArrayList<>();
+        if (sr<dr){
+            vPath= getMazePaths(sr+1,sc,dr,dc);
+        }
+        if (sc<dc){
+            hPath = getMazePaths(sr,sc+1,dr,dc);
+        }
+        ArrayList<String> result = new ArrayList<>();
 
+        for (String str : vPath) {
+            result.add("v"+str);
+        }
+        for (String str : hPath) {
+            result.add("h"+ str);
+        }
 
+        return result;
     }
 }
