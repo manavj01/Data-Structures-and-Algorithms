@@ -10,7 +10,6 @@ public class GetMazePath {
 
         ArrayList<String> res = getMazePaths(sr,sc,dr,dc);
         System.out.println(res);
-
     }
     // sr - source row
     // sc - source column
@@ -39,7 +38,6 @@ public class GetMazePath {
         for (String str : hPath) {
             result.add("h"+ str);
         }
-
         return result;
     }
 }
