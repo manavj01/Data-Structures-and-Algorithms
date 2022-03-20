@@ -22,4 +22,9 @@ public class Util {
             }
         }
     }
+    public static void printOneDArr(int[] arr) {
+        for (int ints : arr) {
+            System.out.println(ints);
+        }
+    }
 }
