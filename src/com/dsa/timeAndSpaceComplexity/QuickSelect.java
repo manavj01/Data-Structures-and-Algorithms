@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class QuickSelect {
     public static int quickSelect(int[] arr, int lo, int hi, int k) {
-    int pivot = arr[hi];
-    int pi = partition(arr, pivot, lo, hi);
+        int pivot = arr[hi];
+        int pi = partition(arr, pivot, lo, hi);
 
-    if(k<pi){
-        return quickSelect(arr,lo , pi+1,k);
-    } else if (k>pi) {
-        return quickSelect(arr,lo , pi-1,k);
-    }else {
-        return pivot;
-    }
+        if (k < pi) {
+            return quickSelect(arr, lo, pi + 1, k);
+        } else if (k > pi) {
+            return quickSelect(arr, lo, pi - 1, k);
+        } else {
+            return pivot;
+        }
 
     }
 
@@ -56,6 +56,6 @@ public class QuickSelect {
             arr[i] = scn.nextInt();
         }
         int k = scn.nextInt();
-        System.out.println(quickSelect(arr,0,arr.length - 1,k - 1));
+        System.out.println(quickSelect(arr, 0, arr.length - 1, k - 1));
     }
 }
