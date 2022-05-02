@@ -78,7 +78,7 @@ public class SumOfTwoArrays {
             System.out.println(carry);
         }
 
-        for(int val : sum){
+        for (int val : sum) {
             System.out.println(val);
         }
     }

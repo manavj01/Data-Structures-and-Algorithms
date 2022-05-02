@@ -16,17 +16,17 @@ public class BrokenEconomy {
         int d = scn.nextInt();
         scn.close();
 
-        int floor=0;
-        int ceil=a.length-1;
+        int floor = 0;
+        int ceil = a.length - 1;
 
-        while (floor<=ceil) {
-            int mid = (floor+ceil)/2;
+        while (floor <= ceil) {
+            int mid = (floor + ceil) / 2;
 
-            if(a[mid]>d){
-                ceil = mid-1;
-            }else if(a[mid]<d){
-                floor = mid+1;
-            }else{
+            if (a[mid] > d) {
+                ceil = mid - 1;
+            } else if (a[mid] < d) {
+                floor = mid + 1;
+            } else {
                 System.out.println(a[mid]);
                 return;
             }

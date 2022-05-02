@@ -9,10 +9,10 @@ public class StringBuilderPrac {
         char ch = sb.charAt(0);
         System.out.println(ch);
 
-        sb.setCharAt(0,'d');
+        sb.setCharAt(0, 'd');
         System.out.println(sb);
 
-        sb.insert(2,'y');
+        sb.insert(2, 'y');
         System.out.println(sb);
 
         sb.deleteCharAt(2);
@@ -28,13 +28,13 @@ public class StringBuilderPrac {
 //        for (int i = 0; i < n; i++) {
 //            s+=i;
 //        }
-        
+
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < n; i++) {
             s.append(i);
         }
         long end = System.currentTimeMillis();
-        long duration = end-start;
+        long duration = end - start;
         System.out.println(duration);
     }
 }

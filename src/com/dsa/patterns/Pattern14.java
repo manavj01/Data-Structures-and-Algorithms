@@ -9,12 +9,12 @@ public class Pattern14 {
         scn.close();
         // write ur code here
         int n = scn.nextInt();
-        for(int i =1; i<=10;i++){
-            
-                int mult = n*i;
-                System.out.print(n +" * " + i + " = "+ mult );
-            
-        System.out.println();
+        for (int i = 1; i <= 10; i++) {
+
+            int mult = n * i;
+            System.out.print(n + " * " + i + " = " + mult);
+
+            System.out.println();
         }
     }
 }

@@ -21,22 +21,22 @@ public class Pattern6 {
 
 
         for (int i = 1; i <= n; i++) {
-             for (int j = star; j >= 1; j--) {
-                System.out.print("*\t");
-            }
-        
-            for (int j = spcae; j >= 1; j--) {
-                System.out.print("\t");
-            }
-            for(int j = star; j>=1; j--){
+            for (int j = star; j >= 1; j--) {
                 System.out.print("*\t");
             }
 
-            if(i<=n/2){
-                spcae+=2;
+            for (int j = spcae; j >= 1; j--) {
+                System.out.print("\t");
+            }
+            for (int j = star; j >= 1; j--) {
+                System.out.print("*\t");
+            }
+
+            if (i <= n / 2) {
+                spcae += 2;
                 star--;
-            }else{
-                spcae-=2;
+            } else {
+                spcae -= 2;
                 star++;
             }
             System.out.println();

@@ -19,15 +19,15 @@ public class StringDeclare {
 //            }
 //        }
         String s1 = "abcd";
-        s1 +=" ";
-        s1 +='w';
-        s1 +='o';
-        s1 +=10;
+        s1 += " ";
+        s1 += 'w';
+        s1 += 'o';
+        s1 += 10;
 
 
-        System.out.println(10+20 + s1);
+        System.out.println(10 + 20 + s1);
 
-        System.out.println(s1 + 10+20);
+        System.out.println(s1 + 10 + 20);
 
 
     }

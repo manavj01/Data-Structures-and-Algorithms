@@ -15,12 +15,12 @@ public class Pattern15 {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
         scn.close();
-        
+
         // int space =n/2;
         // int star = 1;
         // int val=1;
         // for(int i =1;i<=n; i++ ){
-          
+
         //   //for spaces 
         //     for(int j=1; j<=space;j++){
         //         System.out.print("\t");
@@ -29,7 +29,7 @@ public class Pattern15 {
         //     int cval=val;
         //     for(int k=1; k<=star; k++){
         //         System.out.print(cval+ "\t");
-                
+
         //         if(k <= star/2){
         //             cval++;
         //         }else{
@@ -48,43 +48,43 @@ public class Pattern15 {
         //     }
         //     System.out.println();
         // }
-        int space= n/2;
-        int star= 1;
-        int value =1;
+        int space = n / 2;
+        int star = 1;
+        int value = 1;
         // for rows
-        for(int i= 1; i<= n; i++){
+        for (int i = 1; i <= n; i++) {
 
             //for spaces
-            for(int j=1; j<=space; j++){
+            for (int j = 1; j <= space; j++) {
                 System.out.print("\t");
             }
 
             //for values/stars
-            int columnVal=value;
-            for(int k=1; k<=star; k++){
+            int columnVal = value;
+            for (int k = 1; k <= star; k++) {
                 // columnVal++;
-                System.out.print(columnVal +"\t");
-                if(k<=star/2){
+                System.out.print(columnVal + "\t");
+                if (k <= star / 2) {
                     columnVal++;
-                }else{
+                } else {
                     columnVal--;
                 }
             }
 
-            if(i<=n/2){
+            if (i <= n / 2) {
                 space--;
-                star+=2;
+                star += 2;
                 value++;
-            }else{
+            } else {
                 space++;
-                star-=2;
+                star -= 2;
                 value--;
             }
             System.out.println();
 
         }
-        int a=2,b=3;
-        int c = b/a;
+        int a = 2, b = 3;
+        int c = b / a;
         System.out.println(c);
     }
 

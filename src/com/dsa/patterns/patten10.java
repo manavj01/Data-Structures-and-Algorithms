@@ -9,33 +9,33 @@ public class patten10 {
         scn.close();
 
         int innerSpace = -1;
-        int outerSpace = n/2;
-        for(int i =1; i<=n; i++){
+        int outerSpace = n / 2;
+        for (int i = 1; i <= n; i++) {
 
-            for(int j =1; j<=outerSpace; j++){
+            for (int j = 1; j <= outerSpace; j++) {
                 System.out.print("\t");
             }
             System.out.print("*\t");
-            
-            if(i>1 && i<n){
 
-                for(int j =1; j<=innerSpace; j++){
-                    System.out.print("\t");    
+            if (i > 1 && i < n) {
+
+                for (int j = 1; j <= innerSpace; j++) {
+                    System.out.print("\t");
                 }
                 System.out.print("*\t");
             }
 
 
-                if (i<=n/2) {
-                    outerSpace--;
-                    innerSpace+=2;
+            if (i <= n / 2) {
+                outerSpace--;
+                innerSpace += 2;
 
-                } else {
-                    outerSpace++;
-                    innerSpace-=2;
-                }
-                
-           
+            } else {
+                outerSpace++;
+                innerSpace -= 2;
+            }
+
+
             System.out.println();
 
         }
