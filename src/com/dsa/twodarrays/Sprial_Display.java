@@ -25,7 +25,7 @@ public class Sprial_Display {
         int maxc = arr[0].length - 1;
         int count = 0;
         int tne = n * m;
-        while (count<tne) {
+        while (count < tne) {
             // left wall
             for (int i = minr, j = minc; i <= maxr && count < tne; i++) {
                 System.out.println(arr[i][j]);

@@ -40,23 +40,23 @@ public class RingRotate {
         int sz = 2 * (maxr - minr + maxc - minc);
         int[] oned = new int[sz];
         int idx = 0;
-        for(int i = minr,j = minc; i<=maxr; i++){
-            oned[idx] = arr[i][j]; 
+        for (int i = minr, j = minc; i <= maxr; i++) {
+            oned[idx] = arr[i][j];
             idx++;
         }
 
-        for (int i = maxr,j=minc+1; j <= maxc; j++) {
-            oned[idx] = arr[i][j]; 
+        for (int i = maxr, j = minc + 1; j <= maxc; j++) {
+            oned[idx] = arr[i][j];
             idx++;
         }
 
-        for(int i = maxr-1, j=maxc; i>=minr; i--){
-            oned[idx] = arr[i][j]; 
+        for (int i = maxr - 1, j = maxc; i >= minr; i--) {
+            oned[idx] = arr[i][j];
             idx++;
         }
 
-        for(int i=minr, j = maxc-1; j>=minc+1; j--){
-            oned[idx] = arr[i][j]; 
+        for (int i = minr, j = maxc - 1; j >= minc + 1; j--) {
+            oned[idx] = arr[i][j];
             idx++;
         }
 
@@ -65,36 +65,35 @@ public class RingRotate {
     }
 
 
-
     public static void fillShellFromOned(int[][] arr, int s, int[] oned) {
         int minr = s - 1;
         int minc = s - 1;
         int maxr = arr.length - s;
         int maxc = arr[0].length - s;
 
-        
+
         int idx = 0;
-        for(int i = minr,j = minc; i<=maxr; i++){
-            arr[i][j] = oned[idx]  ; 
+        for (int i = minr, j = minc; i <= maxr; i++) {
+            arr[i][j] = oned[idx];
             idx++;
         }
 
-        for (int i = maxr,j=minc+1; j <= maxc; j++) {
-            arr[i][j] = oned[idx]  ; 
+        for (int i = maxr, j = minc + 1; j <= maxc; j++) {
+            arr[i][j] = oned[idx];
             idx++;
         }
 
-        for(int i = maxr-1, j=maxc; i>=minr; i--){
-            arr[i][j] = oned[idx]  ; 
+        for (int i = maxr - 1, j = maxc; i >= minr; i--) {
+            arr[i][j] = oned[idx];
             idx++;
         }
 
-        for(int i=minr, j = maxc-1; j>=minc+1; j--){
-            arr[i][j] = oned[idx]  ; 
+        for (int i = minr, j = maxc - 1; j >= minc + 1; j--) {
+            arr[i][j] = oned[idx];
             idx++;
         }
 
-        
+
     }
 
     public static void rotate(int[] oned, int r) {

@@ -38,7 +38,7 @@ public class Matrix_Multiplication {
 
         for (int i = 0; i < prdt.length; i++) {
             for (int j = 0; j < prdt[0].length; j++) {
-                for(int k=0; k<m1; k++){
+                for (int k = 0; k < m1; k++) {
                     prdt[i][j] = prdt[i][j] + arr1[i][k] * arr2[k][j];
                 }
             }
