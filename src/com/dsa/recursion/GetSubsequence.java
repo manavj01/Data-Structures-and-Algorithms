@@ -9,10 +9,11 @@ public class GetSubsequence {
         ArrayList<String> res = gss(str);
         System.out.println(res);
     }
+
     // bc -> [--, -c, b-, bc]
     // abc -> [---,--c,-b-,-bc,a--,ab-,abc]
     public static ArrayList<String> gss(String str) {
-        if(str.length()==0){
+        if (str.length() == 0) {
             ArrayList<String> bres = new ArrayList<>();
             bres.add("");
             return bres;
@@ -24,10 +25,10 @@ public class GetSubsequence {
 
         ArrayList<String> mres = new ArrayList<>();
         for (String rstr : rres) {
-          mres.add(""+rstr);
+            mres.add("" + rstr);
         }
-        for (String rstr: rres) {
-            mres.add(ch+rstr);
+        for (String rstr : rres) {
+            mres.add(ch + rstr);
         }
         return mres;
     }

@@ -11,10 +11,10 @@ public class DisplayArray {
             arr[i] = scn.nextInt();
         }
         //my approach
-       // displayArr(arr,n);
+        // displayArr(arr,n);
 
         //other approach
-        displayArr(arr,0);
+        displayArr(arr, 0);
     }
 
     public static void displayArr(int[] arr, int idx) {

@@ -12,13 +12,13 @@ public class FirstIndex {
         }
         int x = scn.nextInt();
 
-        int uu = firstIndex(arr,0,x);
+        int uu = firstIndex(arr, 0, x);
         System.out.println(uu);
 
     }
 
-    public static int firstIndex(int[] arr, int idx, int x){
-        if(idx == arr.length){
+    public static int firstIndex(int[] arr, int idx, int x) {
+        if (idx == arr.length) {
             return -1;
         }
         // bad approach
@@ -28,10 +28,10 @@ public class FirstIndex {
 //        }else return fiisa;
 
         // good approach
-        if(arr[idx]==x){
+        if (arr[idx] == x) {
             return idx;
-        }else{
-            int fiisa = firstIndex(arr,idx+1,x);
+        } else {
+            int fiisa = firstIndex(arr, idx + 1, x);
             return fiisa;
         }
 

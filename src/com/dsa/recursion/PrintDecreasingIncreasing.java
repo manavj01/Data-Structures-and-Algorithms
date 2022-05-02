@@ -1,4 +1,5 @@
 package com.dsa.recursion;
+
 import java.util.*;
 
 public class PrintDecreasingIncreasing {
@@ -10,12 +11,12 @@ public class PrintDecreasingIncreasing {
 
     }
 
-    public static void pDI(int n){
-        if(n==0){
+    public static void pDI(int n) {
+        if (n == 0) {
             return;
         }
         System.out.println(n);
-        pDI(n-1);
+        pDI(n - 1);
         System.out.println(n);
 
 

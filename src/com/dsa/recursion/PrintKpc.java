@@ -10,19 +10,19 @@ public class PrintKpc {
     }
 
     public static void printKPC(String str, String asf) {
-        String[] codes ={".;" ,"abc","def","ghi","jkl","mno", "pqrs", "tu","vwx","yz" };
+        String[] codes = {".;", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
 
-        if (str.length()==0){
+        if (str.length() == 0) {
             System.out.println(asf);
             return;
         }
         char ch = str.charAt(0);
         String ros = str.substring(1);
-        String chofCodes = codes[ch-'0'];
+        String chofCodes = codes[ch - '0'];
 
-        for (int i=0; i<chofCodes.length();i++){
+        for (int i = 0; i < chofCodes.length(); i++) {
             char cho = chofCodes.charAt(i);
-            printKPC(ros,asf+cho);
+            printKPC(ros, asf + cho);
         }
 
     }

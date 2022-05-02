@@ -1,4 +1,5 @@
 package com.dsa.recursion;
+
 import java.io.*;
 import java.util.*;
 
@@ -11,9 +12,9 @@ public class DisplayArrayReverse {
             arr[i] = scn.nextInt();
         }
         //a1
-       // displayArrReverse(arr,n);
+        // displayArrReverse(arr,n);
         //a2
-        displayArrReverse(arr,0);
+        displayArrReverse(arr, 0);
     }
 
     public static void displayArrReverse(int[] arr, int idx) {
@@ -26,8 +27,8 @@ public class DisplayArrayReverse {
 //        displayArrReverse(arr,idx-1);
 
         //a2
-        if(idx== arr.length) return;
-        displayArrReverse(arr,idx+1);
+        if (idx == arr.length) return;
+        displayArrReverse(arr, idx + 1);
         System.out.println(arr[idx]);
 
     }

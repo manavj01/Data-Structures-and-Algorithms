@@ -15,7 +15,7 @@ public class ALLIndicesOfArray {
         int x = Integer.parseInt(br.readLine());
         int[] iarr = allIndices(arr, x, 0, 0);
 
-        if(iarr.length == 0){
+        if (iarr.length == 0) {
             System.out.println("NO OUTPUT");
             return;
         }
@@ -28,15 +28,15 @@ public class ALLIndicesOfArray {
 
     public static int[] allIndices(int[] arr, int x, int idx, int fsf) {
 
-        if(idx==arr.length){
-          return new int[fsf];
+        if (idx == arr.length) {
+            return new int[fsf];
         }
         int[] iarr;
-        if(arr[idx] == x){
-          iarr =  allIndices(arr,x,idx+1,fsf+1);
-          iarr[fsf] =idx;
-        }else {
-          iarr =  allIndices(arr,x,idx+1,fsf);
+        if (arr[idx] == x) {
+            iarr = allIndices(arr, x, idx + 1, fsf + 1);
+            iarr[fsf] = idx;
+        } else {
+            iarr = allIndices(arr, x, idx + 1, fsf);
         }
         return iarr;
     }
