@@ -7,17 +7,17 @@ public class TargetSumPair {
     public static void targetSumPair(int[] arr, int target) {
         Arrays.sort(arr);
 
-        int li=0;
-        int ri = arr.length-1;
+        int li = 0;
+        int ri = arr.length - 1;
 
-        while (li<=ri){
-            if (arr[li]+arr[ri]==target){
-                System.out.println(arr[li]+", "+arr[ri]);
+        while (li <= ri) {
+            if (arr[li] + arr[ri] == target) {
+                System.out.println(arr[li] + ", " + arr[ri]);
                 li++;
                 ri--;
-            } else if (arr[li]+arr[ri]>target) {
+            } else if (arr[li] + arr[ri] > target) {
                 ri--;
-            }else {
+            } else {
                 li++;
             }
         }
