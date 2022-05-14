@@ -57,24 +57,25 @@ public class NextGreaterElementToTheRIght {
 
         return nge;
     }
+
     // Next greater element to the right -> iterate from left side
-    public static int[] solve2 (int[] arr){
+    public static int[] solve2(int[] arr) {
         int[] nge = new int[arr.length];
 
         Stack<Integer> st = new Stack<>();
         st.push(0);
-        for (int i =1; i< arr.length; i++){
-            while (st.size() >0 && arr[i] > arr[st.peek()]){
+        for (int i = 1; i < arr.length; i++) {
+            while (st.size() > 0 && arr[i] > arr[st.peek()]) {
                 int pos = st.peek();
                 nge[pos] = arr[i];
                 st.pop();
             }
             st.push(i);
         }
-        while (st.size() >0){
-        int pos = st.peek();
-        nge[pos] = -1;
-        st.pop();
+        while (st.size() > 0) {
+            int pos = st.peek();
+            nge[pos] = -1;
+            st.pop();
         }
 
         return nge;
