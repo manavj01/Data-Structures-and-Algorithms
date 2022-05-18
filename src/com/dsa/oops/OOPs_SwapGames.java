@@ -1,6 +1,6 @@
 package com.dsa.oops;
 
-public class OOPs_SwapGame1 {
+public class OOPs_SwapGames {
 
     public static class Person {
         int age;
