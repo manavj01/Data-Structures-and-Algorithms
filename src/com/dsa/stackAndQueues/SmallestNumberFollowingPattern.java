@@ -28,7 +28,10 @@ public class SmallestNumberFollowingPattern {
             }
 
         }
-        System.out.print(counter);
+        st.push(counter);
+        while (st.size() > 0) {
+            System.out.print(st.pop());
+        }
 
 
     }
