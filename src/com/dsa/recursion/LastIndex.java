@@ -14,7 +14,7 @@ public class LastIndex {
         }
         int x = scn.nextInt();
 
-        int uu = lastIndex(arr, n - 1, x);
+        int uu = lastIndex(arr, 0, x);
         System.out.println(uu);
 
 
@@ -22,12 +22,21 @@ public class LastIndex {
 
     public static int lastIndex(int[] arr, int idx, int x) {
         if (idx < 0) return -1;
-
-        if (arr[idx] == x) {
-            return idx;
+        int liv = lastIndex(arr, idx - 1, x);
+//        if (arr[idx] == x) {
+//            return idx;
+//        } else {
+//            int liisa = lastIndex(arr, idx - 1, x);
+//            return liisa;
+//        }
+        if (liv == -1) {
+            if (arr[idx] == x) {
+                return idx;
+            } else {
+                return -1;
+            }
         } else {
-            int liisa = lastIndex(arr, idx - 1, x);
-            return liisa;
+            return liv;
         }
 
     }
