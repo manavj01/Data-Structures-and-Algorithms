@@ -209,7 +209,6 @@ public class LinkedList {
         while (current != null) {
             Node ocn = current.next;
 
-
             current.next = prev;
 
             prev = current;
@@ -220,5 +219,104 @@ public class LinkedList {
         head = tail;
         tail = temp;
 
+    }
+
+    public int kthFromLast(int k) {
+//        my approach
+//        Node temp = new Node();
+//        Node node = new Node();
+//        int c = 0;
+//        temp =node= head;
+//        while (temp != null){
+//            temp = temp.next;
+//            c++;
+//        }
+//        int kthfromlast = c-k-1;
+//        while (kthfromlast != 0){
+//            node = node.next;
+//            kthfromlast--;
+//        }
+//        return node.data;
+
+//      optimized approach
+        Node s = head;
+        Node f = head;
+
+        for (int i = 0; i < k; i++) {
+            f = f.next;
+        }
+        while (f.next != null) {
+            f = f.next;
+            s = s.next;
+        }
+
+        return s.data;
+    }
+
+    public int mid() {
+        // write your code here
+        Node s = head;
+        Node f = head;
+
+        while (f.next != null && f.next.next != null) {
+            f = f.next.next;
+            s = s.next;
+        }
+        return s.data;
+
+    }
+
+    public static LinkedList mergeTwoSortedLists(LinkedList l1, LinkedList l2) {
+        Node one = l1.head;
+        Node two = l2.head;
+
+        LinkedList res = new LinkedList();
+
+        while (one != null && two != null) {
+            if (one.data <= two.data) {
+                res.addLast(one.data);
+                one = one.next;
+            } else {
+                res.addLast(two.data);
+                two = two.next;
+            }
+        }
+        while (one != null) {
+            res.addLast(one.data);
+            one = one.next;
+        }
+        while (two != null) {
+            res.addLast(two.data);
+            two = two.next;
+        }
+
+        return res;
+    }
+
+    private static Node midNode(Node head, Node tail) {
+        Node f = head;
+        Node s = head;
+
+        while (f != tail && f.next != tail) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
+
+    public static LinkedList mergeSort(Node head, Node tail) {
+        // write your code here
+        if(head == tail){
+            LinkedList br = new LinkedList();
+            br.addLast(head.data);
+            return br;
+        }
+
+        Node mid = midNode(head,tail);
+        LinkedList fsh = mergeSort(head,mid);
+        LinkedList ssh = mergeSort(mid.next,tail);
+        LinkedList cl = mergeTwoSortedLists(fsh,ssh);
+
+        return cl;
     }
 }
