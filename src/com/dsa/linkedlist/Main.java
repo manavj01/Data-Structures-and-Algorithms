@@ -48,16 +48,32 @@ public class Main {
             } else if (str.startsWith("removeAt")) {
                 int idx = Integer.parseInt(str.split(" ")[1]);
                 list.removeAt(idx);
-            } else if(str.startsWith("reverseDI")){
+            } else if (str.startsWith("reverseDI")) {
                 list.reverseDI();
-            } else if(str.startsWith("reversePI")){
+            } else if (str.startsWith("reversePI")) {
                 list.reversePI();
-            } else if(str.startsWith("kthFromEnd")){
+            } else if (str.startsWith("kthFromEnd")) {
                 int idx = Integer.parseInt(str.split(" ")[1]);
                 System.out.println(list.kthFromLast(idx));
-            }else if(str.startsWith("mid")){
+            } else if (str.startsWith("mid")) {
                 System.out.println(list.mid());
             }
+//            int n1 = Integer.parseInt(br.readLine());
+//            LinkedList l1 = new LinkedList();
+//            String[] values1 = br.readLine().split(" ");
+//            for (int i = 0; i < n1; i++) {
+//                int d = Integer.parseInt(values1[i]);
+//                l1.addLast(d);
+//            }
+//
+//            int n2 = Integer.parseInt(br.readLine());
+//            LinkedList l2 = new LinkedList();
+//            String[] values2 = br.readLine().split(" ");
+//            for (int i = 0; i < n2; i++) {
+//                int d = Integer.parseInt(values2[i]);
+//                l2.addLast(d);
+//            }
+
             int n1 = Integer.parseInt(br.readLine());
             LinkedList l1 = new LinkedList();
             String[] values1 = br.readLine().split(" ");
@@ -65,20 +81,21 @@ public class Main {
                 int d = Integer.parseInt(values1[i]);
                 l1.addLast(d);
             }
-
-            int n2 = Integer.parseInt(br.readLine());
-            LinkedList l2 = new LinkedList();
-            String[] values2 = br.readLine().split(" ");
-            for (int i = 0; i < n2; i++) {
-                int d = Integer.parseInt(values2[i]);
-                l2.addLast(d);
-            }
-
-            LinkedList merged = LinkedList.mergeTwoSortedLists(l1, l2);
-            merged.display();
+//            LinkedList merged = LinkedList.mergeTwoSortedLists(l1, l2);
+//            merged.display();
             l1.display();
-            l2.display();
+//            l2.display();
             str = br.readLine();
+            int k = Integer.parseInt(br.readLine());
+            int a = Integer.parseInt(br.readLine());
+            int b = Integer.parseInt(br.readLine());
+
+            l1.display();
+            l1.kReverse(k);
+            l1.display();
+            l1.addFirst(a);
+            l1.addLast(b);
+            l1.display();
         }
     }
 }
