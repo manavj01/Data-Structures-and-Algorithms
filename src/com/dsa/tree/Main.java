@@ -19,10 +19,17 @@ public class Main {
         GenericTree.Node root = construct(arr);
 //        int sz = size(root);
 //        int m = max(root);
-
-        int h = height(root);
-        System.out.println(h);
+//        int h = height(root);
         // display(root);
+
+//        System.out.println(h);
+//        traversals(root);
+//        levelOrder(root);
+//        levelOrderLinewise(root);
+        levelOrderLinewise2(root);
+        levelOrderLinewise3(root);
+        levelOrderLinewise4(root);
+//        levelOrderLinewiseZZ(root);
     }
 
 }

@@ -7,6 +7,13 @@ public class GenericTree {
     static class Node {
         int data;
         ArrayList<Node> children = new ArrayList<>();
+
+        Node() {
+        }
+
+        Node(int data) {
+            this.data = data;
+        }
     }
 
     // d(10) -> 10 will print itself and its family
@@ -75,11 +82,165 @@ public class GenericTree {
         int hgt = -1;
         for (Node child : node.children) {
             int heightofchild = height(child);
-            hgt = Math.max(heightofchild,hgt);
+            hgt = Math.max(heightofchild, hgt);
         }
         hgt++;
         return hgt;
     }
 
+    public static void traversals(Node node) {
+        // area 1 -> eulers left, on the way deep in the recursion, node's pre area
+        System.out.println("Node Pre " + node.data); // euler
+        for (Node child : node.children) {
+            System.out.println("Edge pre " + node.data + "--" + child.data);
+            traversals(child);
+            System.out.println("Edge pre " + node.data + "--" + child.data);
+        }
+        System.out.println("Node Post " + node.data);
+        // area 2 -> eulers right, on the way out of recursion , node's post area
+    }
+
+    public static void levelOrder(Node node) {
+
+        Queue<Node> que = new ArrayDeque<>();
+        que.add(node);
+        while (que.size() > 0) {
+            node = que.remove();
+            System.out.print(node.data + " ");
+
+            que.addAll(node.children);
+        }
+        System.out.println(".");
+    }
+
+    public static void levelOrderLinewise(Node node) {
+        Queue<Node> mq = new ArrayDeque<>();
+        Queue<Node> cq = new ArrayDeque<>();
+
+        mq.add(node);
+        while (mq.size() > 0) {
+
+            node = mq.remove();
+            System.out.print(node.data + " ");
+
+            cq.addAll(node.children);
+
+            if (mq.size() == 0) {
+                mq = cq;
+                cq = new ArrayDeque<>();
+                System.out.println();
+            }
+        }
+    }
+
+    public static void levelOrderLinewise2(Node node) {
+        Queue<Node> mq = new LinkedList<>();
+        mq.add(node);
+        mq.add(new Node(-1));
+
+        while (mq.size() > 0) {
+            node = mq.remove();
+            if (node.data != -1) {
+                System.out.print(node.data + " ");
+                mq.addAll(node.children);
+            } else {
+                if (mq.size() > 0) {
+                    mq.add(new Node(-1));
+                    System.out.println();
+                }
+            }
+        }
+    }
+
+    public static void levelOrderLinewise3(Node node) {
+        Queue<Node> mq = new ArrayDeque<>();
+        mq.add(node);
+
+        while (mq.size() > 0) {
+            int cicl = mq.size();
+            for (int i = 0; i < cicl; i++) {
+                node = mq.remove();
+                System.out.println(node.data + " ");
+
+                for (Node child : node.children) {
+                    mq.add(child);
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    private static class Pair {
+        Node node;
+        int level;
+
+        Pair(Node node, int level) {
+            this.node = node;
+            this.level = level;
+        }
+    }
+
+    public static void levelOrderLinewise4(Node node) {
+        Queue<Pair> mq = new ArrayDeque<>();
+        mq.add(new Pair(node, 1));
+
+        int level = 1;
+        while (mq.size() > 0) {
+            Pair p = mq.remove();
+            if (p.level > level) {
+                level = p.level;
+                System.out.println();
+            }
+            System.out.println(p.node.data + " ");
+            for (Node child : p.node.children) {
+                Pair cp = new Pair(child, p.level + 1);
+                mq.add(cp);
+            }
+        }
+    }
+
+    public static void levelOrderLinewiseZZ(Node node) {
+        Stack<Node> ms = new Stack<>();
+        Stack<Node> cs = new Stack<>();
+//        Stack<Node> hs = new Stack<>();
+//        boolean flag = true;
+        int level = 1;
+        ms.add(node);
+        while (ms.size() > 0) {
+            node = ms.pop();
+            System.out.print(node.data + " ");
+
+            // 1st approach with 3rd helper stack
+//            if (flag) {
+//                for (Node child : node.children) {
+//                    cs.add(child);
+//                }
+//            } else {
+//                hs.addAll(node.children);
+//                while (hs.size() > 0) {
+//                    cs.add(hs.pop());
+//                }
+//            }
+            if (level % 2 == 1) {
+                for (int i = 0; i < node.children.size(); i++) {
+                    Node child = node.children.get(i);
+                    cs.push(child);
+                }
+            } else {
+                for (int i = node.children.size() - 1; i >= 0; i--) {
+                    Node child = node.children.get(i);
+                    cs.push(child);
+                }
+            }
+
+            if (ms.size() == 0) {
+                ms = cs;
+                cs = new Stack<>();
+                level++;
+                System.out.println();
+//                flag = !flag;
+            }
+        }
+    }
 
 }
