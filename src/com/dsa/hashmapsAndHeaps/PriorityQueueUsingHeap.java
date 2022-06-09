@@ -1,8 +1,7 @@
 package com.dsa.hashmapsAndHeaps;
+
 import java.io.*;
 import java.util.*;
-
-
 
 public class PriorityQueueUsingHeap {
     public static class PriorityQueue {
@@ -14,53 +13,54 @@ public class PriorityQueueUsingHeap {
 
         public void add(int val) {
             data.add(val);
-            upheapify(data.size()-1);
+            upheapify(data.size() - 1);
         }
 
         private void upheapify(int i) {
-            int pi = (i-1)/2;
-            if(data.get(i)<data.get(pi)){
-                swap(i,pi);
+            int pi = (i - 1) / 2;
+            if (data.get(i) < data.get(pi)) {
+                swap(i, pi);
                 upheapify(pi);
             }
         }
-        private void swap(int i, int j){
-            int ith= data.get(i);
+
+        private void swap(int i, int j) {
+            int ith = data.get(i);
             int jth = data.get(j);
-            data.set(i,jth);
-            data.set(j,ith);
+            data.set(i, jth);
+            data.set(j, ith);
         }
 
         public int remove() {
-            if(this.size()==0){
+            if (this.size() == 0) {
                 System.out.println("Underflow");
                 return -1;
             }
-                swap(0,data.size()-1);
-                 int val = data.remove(data.size()-1);
-                downheapify(0);
-                return val;
+            swap(0, data.size() - 1);
+            int val = data.remove(data.size() - 1);
+            downheapify(0);
+            return val;
 
         }
 
         private void downheapify(Integer pi) {
-            int mini=pi;
-            int lci = 2*pi +1;
-            if ( lci<data.size() && data.get(lci)<data.get(mini)){
-                mini=lci;
+            int mini = pi;
+            int lci = 2 * pi + 1;
+            if (lci < data.size() && data.get(lci) < data.get(mini)) {
+                mini = lci;
             }
-            int rci = 2*pi + 2;
-            if ( rci<data.size() && data.get(rci)<data.get(mini)){
-                mini=rci;
+            int rci = 2 * pi + 2;
+            if (rci < data.size() && data.get(rci) < data.get(mini)) {
+                mini = rci;
             }
-            if (mini != pi ){
-                swap(pi,mini);
+            if (mini != pi) {
+                swap(pi, mini);
                 downheapify(mini);
             }
         }
 
         public int peek() {
-            if(this.size()==0){
+            if (this.size() == 0) {
                 System.out.println("Underflow");
                 return -1;
             }
