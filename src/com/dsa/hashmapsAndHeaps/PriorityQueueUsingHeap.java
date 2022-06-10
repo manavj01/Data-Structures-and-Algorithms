@@ -7,8 +7,14 @@ public class PriorityQueueUsingHeap {
     public static class PriorityQueue {
         ArrayList<Integer> data;
 
-        public PriorityQueue() {
+        public PriorityQueue(int[] arr) {
             data = new ArrayList<>();
+            for (int val : arr) {
+                data.add(val);
+            }
+            for (int i = data.size() / 2 - 1; i >= 0; i--) {
+                downheapify(i);
+            }
         }
 
         public void add(int val) {
@@ -74,7 +80,8 @@ public class PriorityQueueUsingHeap {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        PriorityQueue qu = new PriorityQueue();
+        int[] arr = {10, 2, 17, 3, 18, 9, 22};
+        PriorityQueue qu = new PriorityQueue(arr);
 
         String str = br.readLine();
         while (!str.equals("quit")) {
