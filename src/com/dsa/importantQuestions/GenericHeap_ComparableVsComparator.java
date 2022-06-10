@@ -1,4 +1,4 @@
-package com.dsa.hashmapsAndHeaps;
+package com.dsa.importantQuestions;
 
 import java.io.*;
 import java.util.*;
