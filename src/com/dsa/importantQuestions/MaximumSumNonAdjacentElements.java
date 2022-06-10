@@ -1,4 +1,4 @@
-package com.dsa.dynamicProgramming;
+package com.dsa.importantQuestions;
 
 import java.util.Scanner;
 
@@ -8,20 +8,20 @@ public class MaximumSumNonAdjacentElements {
         int n = scn.nextInt();
 
         int[] arr = new int[n];
-        for (int i =0 ; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = scn.nextInt();
         }
 
-        int inc = arr[0];
-        int exc = 0;
+        long inc = arr[0];
+        long exc = 0;
 
-        for (int i =1; i < arr.length; i++){
-            int ninc = exc + arr[i];
-            int nexc = Math.max(inc,exc);
+        for (int i = 1; i < arr.length; i++) {
+            long ninc = exc + arr[i];
+            long nexc = Math.max(inc, exc);
 
             inc = ninc;
             exc = nexc;
         }
-        System.out.println(Math.max(inc,exc));
+        System.out.println(Math.max(inc, exc));
     }
 }
