@@ -1,4 +1,4 @@
-package com.dsa.codechef;
+package com.dsa.compititive.codechef;
 
 
 import java.io.BufferedReader;
