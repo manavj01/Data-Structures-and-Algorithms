@@ -1,6 +1,4 @@
-package com.dsa.codeforcesLadder;
-
-import com.dsa.basic.Print_Dig_Of_Num;
+package com.dsa.compititive.codeforcesLadder;
 
 
 import java.util.Scanner;
