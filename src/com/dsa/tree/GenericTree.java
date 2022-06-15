@@ -243,4 +243,58 @@ public class GenericTree {
         }
     }
 
+    public static void mirror(Node node) {
+        for (Node child : node.children) {
+            mirror(child);
+        }
+        Collections.reverse(node.children);
+    }
+
+    public static void removeLeaves(Node node) {
+        for (int i = node.children.size() - 1; i >= 0; i--) {
+            Node child = node.children.get(i);
+            if (child.children.size() == 0) {
+                node.children.remove(child);
+            }
+        }
+        for (Node child : node.children) {
+            removeLeaves(child);
+        }
+    }
+
+    public static void linearize(Node node) {
+        for (Node child : node.children) {
+            linearize(child);
+        }
+
+        while (node.children.size() > 1) {
+            Node lastChild = node.children.remove(node.children.size() - 1);
+            Node sLastChild = node.children.get(node.children.size() - 1);
+            Node sLastTail = getTail(sLastChild);
+            sLastTail.children.add(lastChild);
+        }
+    }
+
+    private static Node getTail(Node node) {
+        while (node.children.size() == 1) {
+            node = node.children.get(0);
+        }
+        return node;
+    }
+
+    public static Node linearize2(Node node) {
+        if (node.children.size() ==0) return node;
+
+        Node lastKeyTail = linearize2(node.children.get(node.children.size() - 1));
+
+        while (node.children.size()>1){
+            Node last = node.children.remove(node.children.size() -1);
+            Node sLast = node.children.get(node.children.size()-1);
+            Node sLastKeyTail = linearize2(sLast);
+            sLastKeyTail.children.add(last);
+        }
+
+        return lastKeyTail;
+    }
+
 }
