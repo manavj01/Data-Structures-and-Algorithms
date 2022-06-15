@@ -20,16 +20,20 @@ public class Main {
 //        int sz = size(root);
 //        int m = max(root);
 //        int h = height(root);
-        // display(root);
-
+//         display(root);
 //        System.out.println(h);
 //        traversals(root);
 //        levelOrder(root);
 //        levelOrderLinewise(root);
-        levelOrderLinewise2(root);
-        levelOrderLinewise3(root);
-        levelOrderLinewise4(root);
+//        levelOrderLinewise2(root);
+//        levelOrderLinewise3(root);
+//        levelOrderLinewise4(root);
 //        levelOrderLinewiseZZ(root);
+//        display(root);
+//        mirror(root);
+//        removeLeaves(root);
+        linearize(root);
+        display(root);
     }
 
 }
