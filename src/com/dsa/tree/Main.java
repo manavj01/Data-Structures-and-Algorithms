@@ -18,19 +18,21 @@ public class Main {
 //        int data = Integer.parseInt(br.readLine());
 //        int d1 = Integer.parseInt(br.readLine());
 //        int d2 = Integer.parseInt(br.readLine());
-        GenericTree.Node root1 = construct(arr);
-        int n2 = Integer.parseInt(br.readLine());
-        int[] arr2 = new int[n2];
-        String[] values2 = br.readLine().split(" ");
-        for (int i = 0; i < n2; i++) {
-            arr2[i] = Integer.parseInt(values2[i]);
-        }
-        Node root2 = construct(arr2);
+        GenericTree.Node root = construct(arr);
+//        int n2 = Integer.parseInt(br.readLine());
+//        int[] arr2 = new int[n2];
+//        String[] values2 = br.readLine().split(" ");
+//        for (int i = 0; i < n2; i++) {
+//            arr2[i] = Integer.parseInt(values2[i]);
+//        }
+//        Node root2 = construct(arr2);
 
 //        boolean similar = areSimilar(root1, root2);
 //        System.out.println(similar);
-        boolean mirror = areMirror(root1, root2);
-        System.out.println(mirror);
+//        boolean mirror = areMirror(root1, root2);
+//        System.out.println(mirror);
+        boolean sym = IsSymmetric(root);
+        System.out.println(sym);
 //        int sz = size(root);
 //        int m = max(root);
 //        int h = height(root);
