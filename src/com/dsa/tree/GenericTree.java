@@ -1,6 +1,5 @@
 package com.dsa.tree;
 
-import java.io.*;
 import java.util.*;
 
 public class GenericTree {
@@ -283,18 +282,108 @@ public class GenericTree {
     }
 
     public static Node linearize2(Node node) {
-        if (node.children.size() ==0) return node;
+        if (node.children.size() == 0) return node;
 
         Node lastKeyTail = linearize2(node.children.get(node.children.size() - 1));
 
-        while (node.children.size()>1){
-            Node last = node.children.remove(node.children.size() -1);
-            Node sLast = node.children.get(node.children.size()-1);
+        while (node.children.size() > 1) {
+            Node last = node.children.remove(node.children.size() - 1);
+            Node sLast = node.children.get(node.children.size() - 1);
             Node sLastKeyTail = linearize2(sLast);
             sLastKeyTail.children.add(last);
         }
-
         return lastKeyTail;
     }
+
+    public static boolean find(Node node, int data) {
+        if (node.data == data) {
+            return true;
+        }
+        for (Node child : node.children) {
+            boolean fic = find(child, data);
+            if (fic) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ArrayList<Integer> nodeToRootPath(Node node, int data) {
+
+        if (node.data == data) {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(node.data);
+            return list;
+        }
+        for (Node child : node.children) {
+            ArrayList<Integer> ptc = nodeToRootPath(child, data);
+            if (ptc.size() > 0) {
+                ptc.add(node.data);
+                return ptc;
+            }
+        }
+        return new ArrayList<>();
+    }
+
+    public static int lca(Node node, int d1, int d2) {
+        ArrayList<Integer> p1 = nodeToRootPath(node, d1);
+        ArrayList<Integer> p2 = nodeToRootPath(node, d2);
+
+        int i = p1.size() - 1;
+        int j = p2.size() - 1;
+
+        while (i >= 0 && j >= 0 && p1.get(i) == p2.get(j)) {
+            i--;
+            j--;
+        }
+        i++;
+//        j++;
+        return p1.get(i);
+
+    }
+
+    public static int distanceBetweenNodes(Node node, int d1, int d2) {
+        ArrayList<Integer> p1 = nodeToRootPath(node, d1);
+        ArrayList<Integer> p2 = nodeToRootPath(node, d2);
+
+        int i = p1.size() - 1;
+        int j = p2.size() - 1;
+
+        while (i >= 0 && j >= 0 && p1.get(i) == p2.get(j)) {
+            i--;
+            j--;
+        }
+
+        return ++i + ++j;
+    }
+    public static boolean areSimilar(Node n1, Node n2) {
+        if (n1.children.size() != n2.children.size()){
+            return false;
+        }
+        for (int i = 0 ; i< n1.children.size(); i++){
+            Node c1 = n1.children.get(i);
+            Node c2 = n2.children.get(i);
+            if (!areSimilar(c1,c2)){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean areMirror(Node n1, Node n2) {
+        if (n1.children.size() != n2.children.size()){
+            return false;
+        }
+
+        for (int i =0; i< n1.children.size(); i++){
+            int j = n1.children.size()-1-i;
+            Node c1 = n1.children.get(i);
+            Node c2 = n2.children.get(j);
+            if (!areMirror(c1,c2)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }

@@ -1,7 +1,7 @@
 package com.dsa.tree;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 import static com.dsa.tree.GenericTree.*;
 
@@ -15,8 +15,22 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(values[i]);
         }
+//        int data = Integer.parseInt(br.readLine());
+//        int d1 = Integer.parseInt(br.readLine());
+//        int d2 = Integer.parseInt(br.readLine());
+        GenericTree.Node root1 = construct(arr);
+        int n2 = Integer.parseInt(br.readLine());
+        int[] arr2 = new int[n2];
+        String[] values2 = br.readLine().split(" ");
+        for (int i = 0; i < n2; i++) {
+            arr2[i] = Integer.parseInt(values2[i]);
+        }
+        Node root2 = construct(arr2);
 
-        GenericTree.Node root = construct(arr);
+//        boolean similar = areSimilar(root1, root2);
+//        System.out.println(similar);
+        boolean mirror = areMirror(root1, root2);
+        System.out.println(mirror);
 //        int sz = size(root);
 //        int m = max(root);
 //        int h = height(root);
@@ -32,8 +46,18 @@ public class Main {
 //        display(root);
 //        mirror(root);
 //        removeLeaves(root);
-        linearize(root);
-        display(root);
+//        linearize(root);
+//        linearize2(root);
+//        System.out.println(find(root, data));
+//        ArrayList<Integer> path = nodeToRootPath(root, data);
+//        System.out.println(path);
+
+//        int lca = lca(root,d1,d2);
+//        System.out.println(lca);
+//        int dist = distanceBetweenNodes(root, d1, d2);
+//        System.out.println(dist);
+
+//        display(root);
     }
 
 }
