@@ -178,31 +178,33 @@ public class GenericTreeMultiSolver {
         dch += 1;
         return dch;
     }
-    public static class Pair{
+
+    public static class Pair {
         Node node;
         int state;
 
-        Pair(Node node, int state){
+        Pair(Node node, int state) {
             this.node = node;
             this.state = state;
         }
     }
-    public static void IterativePreandPostOrder(Node node) {
-        Stack<Pair> st = new Stack<Pair>();
-        st.push(new Pair(node,-1));
+
+    public static void IterativePreAndPostOrder(Node node) {
+        Stack<Pair> st = new Stack<>();
+        st.push(new Pair(node, -1));
 
         StringBuilder pre = new StringBuilder();
         StringBuilder post = new StringBuilder();
-        while (st.size() > 0){
+        while (st.size() > 0) {
             Pair top = st.peek();
-            if (top.state == -1){
+            if (top.state == -1) {
                 pre.append(top.node.data).append(" ");
                 top.state++;
-            }else if(top.state == top.node.children.size()){
+            } else if (top.state == top.node.children.size()) {
                 post.append(top.node.data).append(" ");
                 st.pop();
-            }else {
-                Pair cp = new Pair(top.node.children.get(top.state),-1);
+            } else {
+                Pair cp = new Pair(top.node.children.get(top.state), -1);
                 st.push(cp);
                 top.state++;
             }
@@ -263,6 +265,6 @@ public class GenericTreeMultiSolver {
 //        calculateDiaReturnHeight(root);
 //        System.out.println(dia);
 
-        IterativePreandPostOrder(root);
+        IterativePreAndPostOrder(root);
     }
 }
