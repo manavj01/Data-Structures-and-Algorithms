@@ -209,7 +209,7 @@ public class GenericTree {
             node = ms.pop();
             System.out.print(node.data + " ");
 
-            // 1st approach with 3rd helper stack
+            // 1st approach with 3rd KDistanceHelper stack
 //            if (flag) {
 //                for (Node child : node.children) {
 //                    cs.add(child);
