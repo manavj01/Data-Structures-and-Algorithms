@@ -12,13 +12,13 @@ public class StrongPasswordChecker2 {
 
     public static boolean strongPasswordCheckerII(String password) {
 //        boolean flag = false;
-        String pass =" "+password;
+        String pass = " " + password;
         boolean lc = false;
         boolean uc = false;
         boolean od = false;
         boolean spch = false;
         String spc = "!@#$%^&*()-+";
-        if (pass.length()>= 8) {
+        if (pass.length() >= 8) {
             for (int i = 1; i < pass.length(); i++) {
                 if (pass.charAt(i) == pass.charAt(i - 1)) {
                     return false;
@@ -28,9 +28,9 @@ public class StrongPasswordChecker2 {
                     uc = true;
                 } else if (pass.charAt(i) >= '0' && pass.charAt(i) <= '9') {
                     od = true;
-                }else {
-                    for (int j = 0 ; j<spc.length();j++){
-                        if (spc.charAt(j) == pass.charAt(i)){
+                } else {
+                    for (int j = 0; j < spc.length(); j++) {
+                        if (spc.charAt(j) == pass.charAt(i)) {
                             spch = true;
                             break;
                         }

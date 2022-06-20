@@ -8,13 +8,13 @@ public class PrimeFactorOfNum {
         int n = scn.nextInt();
         scn.close();
 
-        for(int div = 2; div*div <= n; div++){
-            while(n%div == 0){
-                 n = n/div;
-                 System.out.print(div + " ");
+        for (int div = 2; div * div <= n; div++) {
+            while (n % div == 0) {
+                n = n / div;
+                System.out.print(div + " ");
             }
         }
-        if(n!=0){
+        if (n != 0) {
             System.out.print(n);
         }
     }

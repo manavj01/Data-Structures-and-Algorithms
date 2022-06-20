@@ -8,21 +8,22 @@ public class BestTimeToBuyAndSellStocks1 {
         int n = scn.nextInt();
         int[] prices = new int[n];
 
-        for (int i =0; i< prices.length; i++){
+        for (int i = 0; i < prices.length; i++) {
             prices[i] = scn.nextInt();
         }
         System.out.println(maxProfit(prices));
     }
+
     public static int maxProfit(int[] prices) {
         int lsf = Integer.MAX_VALUE;
-        int op =0, pist = 0;
+        int op = 0, pist = 0;
 
-        for (int i =0; i < prices.length; i++){
-            if (prices[i] < lsf){
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < lsf) {
                 lsf = prices[i];
             }
             pist = prices[i] - lsf;
-            if (pist > op){
+            if (pist > op) {
                 op = pist;
             }
         }

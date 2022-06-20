@@ -26,7 +26,7 @@ public class MinCostMazeTraversal_dp {
                 } else if (j == dp[0].length - 1) {
                     dp[i][j] = dp[i + 1][j] + arr[i][j];
                 } else {
-                    dp[i][j] = Math.min(dp[i + 1][j], dp[i][j+1]) + arr[i][j];
+                    dp[i][j] = Math.min(dp[i + 1][j], dp[i][j + 1]) + arr[i][j];
                 }
             }
         }

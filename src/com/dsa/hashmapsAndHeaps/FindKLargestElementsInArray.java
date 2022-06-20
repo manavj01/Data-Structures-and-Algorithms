@@ -15,11 +15,11 @@ public class FindKLargestElementsInArray {
         int c = scn.nextInt();
         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
-        for (int val :arr) {
+        for (int val : arr) {
             pq.add(val);
         }
 
-        for (int i=0 ;i< c;i++) {
+        for (int i = 0; i < c; i++) {
             System.out.println(pq.peek());
             pq.remove();
         }

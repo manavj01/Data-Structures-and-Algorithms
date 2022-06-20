@@ -23,27 +23,28 @@ public class OOPs_SwapGames {
 //        p2.saysHi();
         p1.saysHi();
         p2.saysHi();
-        swap3(p1,p2);
+        swap3(p1, p2);
         p1.saysHi();
         p2.saysHi();
     }
 
-    public static void swap1(Person psn1 , Person psn2){
+    public static void swap1(Person psn1, Person psn2) {
         Person temp = psn1;
         psn1 = psn2;
         psn2 = temp;
     }
-    public static void swap2(Person psn1,Person psn2){
+
+    public static void swap2(Person psn1, Person psn2) {
         int age = psn1.age;
         psn1.age = psn2.age;
         psn2.age = age;
 
         String name = psn1.name;
         psn1.name = psn2.name;
-        psn2.name =name;
+        psn2.name = name;
     }
 
-    public static void swap3(Person psn1, Person psn2){
+    public static void swap3(Person psn1, Person psn2) {
         psn1 = new Person();
 
         int age = psn1.age;
@@ -54,6 +55,6 @@ public class OOPs_SwapGames {
 
         String name = psn1.name;
         psn1.name = psn2.name;
-        psn2.name =name;
+        psn2.name = name;
     }
 }

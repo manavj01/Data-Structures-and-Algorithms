@@ -1,4 +1,5 @@
 package com.dsa.hashmapsAndHeaps;
+
 import java.io.*;
 import java.util.*;
 
@@ -14,23 +15,23 @@ public class MedianPriorityQueu {
         }
 
         public void add(int val) {
-            if(right.size()>0 && val > right.peek()){
+            if (right.size() > 0 && val > right.peek()) {
                 right.add(val);
             } else {
                 left.add(val);
             }
-            if(left.size() - right.size()==2){
+            if (left.size() - right.size() == 2) {
                 right.add(left.remove());
-            } else if(right.size()- left.size() ==2){
+            } else if (right.size() - left.size() == 2) {
                 left.add(right.remove());
             }
         }
 
         public int remove() {
-            if(this.size()==0){
+            if (this.size() == 0) {
                 System.out.println("underflow");
                 return -1;
-            } else if(left.size()>= right.size()){
+            } else if (left.size() >= right.size()) {
                 return left.remove();
             } else {
                 return right.remove();
@@ -38,10 +39,10 @@ public class MedianPriorityQueu {
         }
 
         public int peek() {
-            if(this.size()==0){
+            if (this.size() == 0) {
                 System.out.println("underflow");
                 return -1;
-            } else if(left.size() >= right.size()){
+            } else if (left.size() >= right.size()) {
                 return left.peek();
             } else {
                 return right.peek();
@@ -50,7 +51,7 @@ public class MedianPriorityQueu {
         }
 
         public int size() {
-            return left.size()+ right.size();
+            return left.size() + right.size();
         }
     }
 

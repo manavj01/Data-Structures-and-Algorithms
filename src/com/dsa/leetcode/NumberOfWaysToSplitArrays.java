@@ -18,16 +18,16 @@ public class NumberOfWaysToSplitArrays {
         int valid_splits = 0;
 
         int left_arr = nums[0];
-        int arrsum=0;
-        for (int i=1; i< nums.length; i++){
+        int arrsum = 0;
+        for (int i = 1; i < nums.length; i++) {
             arrsum += nums[i];
         }
 
-        if (left_arr>arrsum){
+        if (left_arr > arrsum) {
             valid_splits++;
         }
 
-        for (int pos = 1; pos< nums.length-2; pos++){
+        for (int pos = 1; pos < nums.length - 2; pos++) {
             int nums_left[] = new int[pos];
             int nums_right[] = new int[nums.length - pos];
 

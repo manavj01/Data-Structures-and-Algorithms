@@ -17,7 +17,7 @@ public class CountHillAndValleys {
 //            arr[i] = scn.nextInt();
 //        }
         CountHillAndValleys chv = new CountHillAndValleys();
-        int ans = chv.countHillValley2(new int[]{2,4,1,1,6,5});
+        int ans = chv.countHillValley2(new int[]{2, 4, 1, 1, 6, 5});
         System.out.println(ans);
     }
 
@@ -28,42 +28,43 @@ public class CountHillAndValleys {
         int lastElement = nums[0];
         ArrayList<Integer> al = new ArrayList<>();
         al.add(lastElement);
-        for(int i = 1; i < nums.length; i++){
-            if(nums[i] == lastElement) continue;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == lastElement) continue;
             al.add(nums[i]);
             lastElement = nums[i];
         }
         return al.stream().mapToInt(i -> i).toArray();
     }
+
     public int countHillValley2(int[] nums) {
-        if(nums.length<3){
+        if (nums.length < 3) {
             return 0;
         }
         int hills = 0;
-        for(int i=1;i<nums.length-1;i++){
-            if(nums[i-1]==nums[i] && i>1){
-                nums[i-1] = nums[i-2];
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i - 1] == nums[i] && i > 1) {
+                nums[i - 1] = nums[i - 2];
             }
-            if(nums[i]>nums[i-1] && nums[i]>nums[i+1]){
+            if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
                 hills++;
-            }
-            else if(nums[i]<nums[i-1] && nums[i]<nums[i+1]){
+            } else if (nums[i] < nums[i - 1] && nums[i] < nums[i + 1]) {
                 hills++;
             }
         }
         return hills;
     }
+
     public int countHillValley(int[] arr) {
         int[] nums = removeDuplicates(arr);
-        int counthillvalley=0;
+        int counthillvalley = 0;
 
-        for (int i=1;i<nums.length-1;i++){
+        for (int i = 1; i < nums.length - 1; i++) {
             // nums[i] > nums[i-1] and nums[i] < nums[i+1]
-            if(nums[i] < nums[i+1] && nums[i] > nums[i-1]) {
+            if (nums[i] < nums[i + 1] && nums[i] > nums[i - 1]) {
                 counthillvalley++;
-            }else if (nums[i] > nums[i+1] && nums[i] < nums[i-1]) {
+            } else if (nums[i] > nums[i + 1] && nums[i] < nums[i - 1]) {
                 counthillvalley++;
-            }else {
+            } else {
                 System.out.println("ELSE");
             }
 

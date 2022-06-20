@@ -23,7 +23,7 @@ public class CalculateAmountPaidInTaxes {
             } else {
                 tax += (income - prev) * percent / 100d;
                 return tax;
-                
+
             }
         }
 

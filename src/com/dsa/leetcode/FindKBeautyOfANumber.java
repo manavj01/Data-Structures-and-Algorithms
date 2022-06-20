@@ -8,7 +8,7 @@ public class FindKBeautyOfANumber {
         int num = scn.nextInt();
         int k = scn.nextInt();
 
-       int ans = divisorSubstrings(num, k);
+        int ans = divisorSubstrings(num, k);
         System.out.println(ans);
 
     }
@@ -18,12 +18,12 @@ public class FindKBeautyOfANumber {
         int beauty_count = 0;
         String str = Integer.toString(num_bfr);
 
-        for (int i = 0, j = k; i < num_bfr && j<str.length()+1; i++,j++) {
-            String s =str.substring(i, j);
+        for (int i = 0, j = k; i < num_bfr && j < str.length() + 1; i++, j++) {
+            String s = str.substring(i, j);
             int convStr = Integer.parseInt(s);
 //            System.out.println(convStr);
-            if(convStr!=0){
-                if(num % convStr ==0){
+            if (convStr != 0) {
+                if (num % convStr == 0) {
                     beauty_count++;
                 }
             }

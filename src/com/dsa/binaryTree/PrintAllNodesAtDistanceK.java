@@ -14,6 +14,7 @@ public class PrintAllNodesAtDistanceK {
             this.right = right;
         }
     }
+
     public static class Pair {
         Node node;
         int state;
@@ -23,6 +24,7 @@ public class PrintAllNodesAtDistanceK {
             this.state = state;
         }
     }
+
     public static Node construct(Integer[] arr) {
         Node root = new Node(arr[0], null, null);
 
@@ -65,6 +67,7 @@ public class PrintAllNodesAtDistanceK {
 
 
     static List<Node> path;
+
     public static List<Integer> distanceK(Node root, Node target, int K) {
         path = new ArrayList<>();
         findPathAndPrint(root, target);
@@ -110,7 +113,7 @@ public class PrintAllNodesAtDistanceK {
         Integer[] arr1 = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Node root = construct(arr);
         Node target = root.left.right;
-        List<Integer> res = distanceK(root,target,2);
+        List<Integer> res = distanceK(root, target, 2);
         System.out.println(res);
     }
 }

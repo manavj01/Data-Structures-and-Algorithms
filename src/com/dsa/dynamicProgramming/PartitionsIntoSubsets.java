@@ -17,13 +17,13 @@ public class PartitionsIntoSubsets {
 
         for (int t = 1; t <= k; t++) {
             for (int p = t; p <= n; p++) {
-                 if (p < t ){
-                     dp[t][p] =0;
-                 }else if (p == t){
-                     dp[t][p] =1;
-                 }else {
-                     dp[t][p] = dp[t-1][p-1] + dp[t][p-1] * t;
-                 }
+                if (p < t) {
+                    dp[t][p] = 0;
+                } else if (p == t) {
+                    dp[t][p] = 1;
+                } else {
+                    dp[t][p] = dp[t - 1][p - 1] + dp[t][p - 1] * t;
+                }
             }
         }
 

@@ -8,7 +8,7 @@ public class RotateAnArray {
         int n = scn.nextInt();
         int[] arr = new int[n];
 
-        for(int i = 0 ; i < arr.length ; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = scn.nextInt();
         }
 
@@ -16,31 +16,31 @@ public class RotateAnArray {
 
         rotate(arr, k);
 
-        for(int val : arr){
-            System.out.print(val+" ");
+        for (int val : arr) {
+            System.out.print(val + " ");
         }
         System.out.println();
     }
 
-    public static void rotate(int[] arr,int k){
-        k = k% arr.length;
-        if(k<0){
-            k = k+ arr.length;
+    public static void rotate(int[] arr, int k) {
+        k = k % arr.length;
+        if (k < 0) {
+            k = k + arr.length;
         }
-        reverse(arr, 0, arr.length-k-1);
-        reverse(arr, arr.length-k, arr.length-1);
-        reverse(arr, 0 , arr.length-1);
+        reverse(arr, 0, arr.length - k - 1);
+        reverse(arr, arr.length - k, arr.length - 1);
+        reverse(arr, 0, arr.length - 1);
     }
 
-    public static void reverse(int[] arr ,int start , int end){
+    public static void reverse(int[] arr, int start, int end) {
         int i = start;
         int j = end;
-        while(i<j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-        i++;
-        j--;
+        while (i < j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++;
+            j--;
         }
 
     }

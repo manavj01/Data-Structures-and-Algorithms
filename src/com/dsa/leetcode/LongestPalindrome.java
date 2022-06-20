@@ -6,7 +6,8 @@ public class LongestPalindrome {
         String res = longestPalindrome(str);
         System.out.println(res);
     }
-    public static String longestPalindrome(String s){
+
+    public static String longestPalindrome(String s) {
 
         int n = s.length();
         String res = null;

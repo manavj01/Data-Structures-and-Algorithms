@@ -20,27 +20,27 @@ public class GetCommonElements2 {
 
         int[] a2 = new int[n2];
 
-        for(int i = 0; i < a2.length; i++) {
+        for (int i = 0; i < a2.length; i++) {
             a2[i] = scn.nextInt();
         }
 
         HashMap<Integer, Integer> fmap = new HashMap<>();
 
-        for(Integer val: a1) {
-            if(fmap.containsKey(val)){
+        for (Integer val : a1) {
+            if (fmap.containsKey(val)) {
                 int of = fmap.get(val);
-                int nf = of+1;
-                fmap.put(val,nf);
-            }else{
-                fmap.put(val,1);
+                int nf = of + 1;
+                fmap.put(val, nf);
+            } else {
+                fmap.put(val, 1);
             }
         }
 
         for (Integer val : a2) {
-            if(fmap.containsKey(val) && fmap.get(val)>0){
+            if (fmap.containsKey(val) && fmap.get(val) > 0) {
                 System.out.println(val);
-                int nf= fmap.get(val) -1;
-                fmap.put(val,nf);
+                int nf = fmap.get(val) - 1;
+                fmap.put(val, nf);
             }
         }
     }

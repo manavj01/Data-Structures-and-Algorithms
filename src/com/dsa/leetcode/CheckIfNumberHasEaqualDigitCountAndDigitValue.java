@@ -10,27 +10,28 @@ public class CheckIfNumberHasEaqualDigitCountAndDigitValue {
         boolean soln = digitCount(num);
         System.out.println(soln);
     }
+
     public static boolean digitCount(String num) {
         int[] arr = new int[num.length()];
-        for(int i =0 ; i<num.length(); i++){
+        for (int i = 0; i < num.length(); i++) {
             char ch = num.charAt(i);
-            int dig = ch-'0';
+            int dig = ch - '0';
             arr[i] = dig;
         }
-        for (int i = 0 ; i< arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             int val = arr[i];
 
             int counter = 0;
-            for (int j =0 ; j< arr.length; j++){
-                if (i == arr[j]){
+            for (int j = 0; j < arr.length; j++) {
+                if (i == arr[j]) {
                     counter++;
                 }
             }
-            if (counter != val){
+            if (counter != val) {
                 return false;
             }
         }
 
-       return true;
+        return true;
     }
 }

@@ -25,7 +25,7 @@ public class AgeLimit {
             }
             if (a >= x && a < y) {
                 System.out.println("YES");
-            }else{
+            } else {
                 System.out.println("NO");
             }
         }

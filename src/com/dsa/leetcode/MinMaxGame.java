@@ -11,7 +11,7 @@ public class MinMaxGame {
     }
 
     public static int minMaxGame(int[] nums) {
-        int ret=0;
+        int ret = 0;
         int[] newNums;
 //        while (nums.length >= 1) {}
         while (nums.length != 1) {
@@ -23,9 +23,9 @@ public class MinMaxGame {
                     newNums[i] = Math.max(nums[2 * i], nums[2 * i + 1]);
                 }
             }
-            nums=newNums;
-            if (newNums.length==1){
-                ret =newNums[0];
+            nums = newNums;
+            if (newNums.length == 1) {
+                ret = newNums[0];
             }
         }
 

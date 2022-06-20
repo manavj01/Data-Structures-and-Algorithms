@@ -10,11 +10,12 @@ public class Constructors {
         }
 
         // if we forget , java provides our class a default constructor
-        Person(){
+        Person() {
             //constructor
         }
+
         // parameterised constructor
-        Person(int age, String name){
+        Person(int age, String name) {
             this.age = age;
             this.name = name;
         }
@@ -26,7 +27,7 @@ public class Constructors {
         p1.name = "A";
         p1.saysHi();
 
-        Person p2 = new Person(20,"B");
+        Person p2 = new Person(20, "B");
         p2.saysHi();
 
     }

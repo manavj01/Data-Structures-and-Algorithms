@@ -18,8 +18,8 @@ public class FractionalKnapsack {
             wts[i] = scn.nextInt();
         }
         float[] valbywts = new float[n];
-        for (int i = 0 ; i < n; i++){
-            valbywts[i] = (float) vals[i]/wts[i];
+        for (int i = 0; i < n; i++) {
+            valbywts[i] = (float) vals[i] / wts[i];
         }
         Arrays.sort(valbywts);
         System.out.println(Arrays.toString(valbywts));

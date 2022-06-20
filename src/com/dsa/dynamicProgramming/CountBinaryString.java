@@ -7,7 +7,7 @@ public class CountBinaryString {
         Scanner scn = new Scanner(System.in);
 
         int n = scn.nextInt();
-    //method 1 by arrays
+        //method 1 by arrays
 //        int[] dp0 = new int[n + 1];
 //        int[] dp1 = new int[n + 1];
 //
@@ -23,13 +23,13 @@ public class CountBinaryString {
         int oczeros = 1;
         int ocones = 1;
 
-        for (int i = 2; i<=n; i++){
+        for (int i = 2; i <= n; i++) {
             int nczeros = ocones;
             int ncones = ocones + oczeros;
 
             ocones = ncones;
             oczeros = nczeros;
         }
-        System.out.println(ocones+ oczeros);
+        System.out.println(ocones + oczeros);
     }
 }

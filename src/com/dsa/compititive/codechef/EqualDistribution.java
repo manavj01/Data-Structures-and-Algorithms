@@ -14,16 +14,16 @@ public class EqualDistribution {
             }
         }
 
-        for (int i = 0 ; i < arr.length; i++){
-            int b=0;
-            int a=0;
-            for (int j = 0; j<= 1; j++){
+        for (int i = 0; i < arr.length; i++) {
+            int b = 0;
+            int a = 0;
+            for (int j = 0; j <= 1; j++) {
                 a = arr[i][0];
                 b = arr[i][1];
             }
-            if ((a + b)% 2 == 0){
+            if ((a + b) % 2 == 0) {
                 System.out.println("YES");
-            } else{
+            } else {
                 System.out.println("NO");
             }
         }

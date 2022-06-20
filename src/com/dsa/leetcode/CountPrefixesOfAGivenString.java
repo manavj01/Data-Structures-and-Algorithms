@@ -25,7 +25,7 @@ public class CountPrefixesOfAGivenString {
                     break;
                 }
             }
-            if(flag == 1) count++;
+            if (flag == 1) count++;
         }
         return count;
     }

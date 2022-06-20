@@ -59,6 +59,7 @@ public class MergedOverlappingIntervals {
             this.st = st;
             this.et = et;
         }
+
         // this > other return +ve
         // this = other return 0
         // this < other return -ve

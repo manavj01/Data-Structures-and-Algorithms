@@ -328,13 +328,14 @@ public class BinaryTree {
         pathToLeafFromRoot(node.left, path + node.data + " ", +sum + node.data, lo, hi);
         pathToLeafFromRoot(node.right, path + node.data + " ", sum + node.data, lo, hi);
     }
-    public static Node createLeftCloneTree(Node node){
+
+    public static Node createLeftCloneTree(Node node) {
         // write your code here
         if (node == null) return null;
         Node lcr = createLeftCloneTree(node.left);
         Node rcr = createLeftCloneTree(node.right);
 
-        Node nn = new Node(node.data,lcr,null);
+        Node nn = new Node(node.data, lcr, null);
         node.left = nn;
         node.right = rcr;
 
@@ -346,7 +347,7 @@ public class BinaryTree {
     public static void main(String[] args) throws IOException {
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Integer[] arr1 = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
-        Integer[] arr2 = {50 ,25 ,12 ,null ,null ,37, 30 ,null ,null ,40 ,null ,null ,75 ,62 ,60 ,null ,null ,70, null ,null ,87, null,null};
+        Integer[] arr2 = {50, 25, 12, null, null, 37, 30, null, null, 40, null, null, 75, 62, 60, null, null, 70, null, null, 87, null, null};
         Node root = construct(arr2);
 //        display(root);
 //        int size = size(root);

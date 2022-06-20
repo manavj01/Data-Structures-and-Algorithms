@@ -15,7 +15,7 @@ public class vowelReverse {
         char[] charr = s.toCharArray();
 
         while (i <= j) {
-            if ( (isvowel(charr[i])) && (!isvowel(charr[j])) ) {
+            if ((isvowel(charr[i])) && (!isvowel(charr[j]))) {
                 j--;
             } else if (!(isvowel(charr[i])) && (isvowel(charr[j]))) {
                 i++;
@@ -36,10 +36,10 @@ public class vowelReverse {
     }
 
     public static boolean isvowel(char v) {
-        if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u' || v == 'A' || v == 'E' || v == 'I' || v == 'O' || v == 'U'){
+        if (v == 'a' || v == 'e' || v == 'i' || v == 'o' || v == 'u' || v == 'A' || v == 'E' || v == 'I' || v == 'O' || v == 'U') {
             return true;
         }
-            return false;
+        return false;
     }
 
 //    public static String swap(int si, int ei, String s) {

@@ -1,6 +1,8 @@
 package com.dsa.hashmapsAndHeaps;
+
 import java.io.*;
 import java.util.*;
+
 public class SortKSortedArray {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,11 +19,11 @@ public class SortKSortedArray {
         for (int i = 0; i <= k; i++) {
             pq.add(arr[i]);
         }
-        for (int i = k+1; i < arr.length; i++) {
+        for (int i = k + 1; i < arr.length; i++) {
             System.out.println(pq.remove());
             pq.add(arr[i]);
         }
-        while (pq.size() > 0){
+        while (pq.size() > 0) {
             System.out.println(pq.remove());
         }
     }

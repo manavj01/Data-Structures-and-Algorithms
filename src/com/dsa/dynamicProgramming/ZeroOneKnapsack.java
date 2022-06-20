@@ -32,7 +32,7 @@ public class ZeroOneKnapsack {
                         dp[i][j] = dp[i - 1][j]; // when i doesnt bat
                     }
                 } else {
-                 dp[i][j] = dp[i-1][j]; // when i doesnt bat
+                    dp[i][j] = dp[i - 1][j]; // when i doesnt bat
                 }
             }
         }

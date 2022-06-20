@@ -15,12 +15,12 @@ public class SuccesfulPairsOfSpellsAndPotions {
 
         int n = Integer.parseInt(br.readLine());
         int[] spells = new int[n];
-        for (int i = 0 ; i < spells.length; i++){
+        for (int i = 0; i < spells.length; i++) {
             spells[i] = Integer.parseInt(br.readLine());
         }
         int m = Integer.parseInt(br.readLine());
         int[] potions = new int[m];
-        for (int i = 0 ; i < potions.length; i++){
+        for (int i = 0; i < potions.length; i++) {
             potions[i] = Integer.parseInt(br.readLine());
         }
         long success = Long.parseLong(br.readLine());
@@ -31,17 +31,17 @@ public class SuccesfulPairsOfSpellsAndPotions {
 
     public static int[] successfulPairs(int[] spells, int[] potions, long success) {
         int[] res = new int[spells.length];
-        int c=0;
+        int c = 0;
         for (int j = 0; j < spells.length; j++) {
 
             for (int i = 0; i < potions.length; i++) {
-                int r =  spells[j] * potions[i];
-                if (r >= success){
+                int r = spells[j] * potions[i];
+                if (r >= success) {
                     c++;
                 }
             }
             res[j] = c;
-            c=0;
+            c = 0;
         }
         return res;
     }

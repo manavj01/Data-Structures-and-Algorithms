@@ -17,24 +17,24 @@ public class STString {
 
     public static int samePlace(int n, int[] arr) {
         int[] narr = new int[arr.length];
-        for (int i =0 ; i<arr.length ; i++){
+        for (int i = 0; i < arr.length; i++) {
             narr[i] = arr[i];
         }
 
 
-        for (int i = 0; i < arr.length; i++)  {
-            for (int j = i + 1; j < arr.length; j++){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 int tmp = 0;
-                if (arr[i] > arr[j]){
+                if (arr[i] > arr[j]) {
                     tmp = arr[i];
                     arr[i] = arr[j];
                     arr[j] = tmp;
                 }
             }
         }
-        int c=0;
-        for(int i = 0 ; i<narr.length ; i++ ){
-            if(narr[i] == arr[i]){
+        int c = 0;
+        for (int i = 0; i < narr.length; i++) {
+            if (narr[i] == arr[i]) {
                 c++;
             }
         }
@@ -42,16 +42,16 @@ public class STString {
         return c;
     }
 
-        static int isSTString (String a){
-            String str = a;
-            boolean flag = false;
+    static int isSTString(String a) {
+        String str = a;
+        boolean flag = false;
 
-            for (int i = 0; i < str.length(); i++) {
-                char ch = str.charAt(i);
-                if (ch != 'S' && ch != 't') {
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (ch != 'S' && ch != 't') {
 
-                }
             }
-            return 1;
         }
+        return 1;
     }
+}

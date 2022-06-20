@@ -17,7 +17,7 @@ public class RearrangeCharactersToMakeTargetString {
         HashMap<Character, Integer> tmap = getMap(target);
         int min = Integer.MAX_VALUE;
         for (char ch : target.toCharArray()) {
-            if (!fmap.containsKey(ch)){
+            if (!fmap.containsKey(ch)) {
                 return 0;
             }
             min = Math.min(min, fmap.get(ch) / tmap.get(ch));

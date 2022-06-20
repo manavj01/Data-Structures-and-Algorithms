@@ -20,11 +20,11 @@ public class BestTimeToBuyAndSellStocks2 {
         int sd = 0;
 
         for (int i = 1; i < prices.length; i++) {
-            if (prices[i] >= prices[i-1]){
+            if (prices[i] >= prices[i - 1]) {
                 sd++;
-            }else {
+            } else {
                 profit += prices[sd] - prices[bd];
-                bd = sd =i;
+                bd = sd = i;
             }
         }
         profit += prices[sd] - prices[bd];
