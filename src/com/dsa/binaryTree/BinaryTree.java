@@ -343,40 +343,28 @@ public class BinaryTree {
         return node;
     }
 
+    public static Node transformBackLeftClonedTree(Node node) {
+        if (node == null) return null;
+
+        Node lnn = transformBackLeftClonedTree(node.left.left);
+        Node rnn = transformBackLeftClonedTree(node.right);
+
+        node.left = lnn;
+        node.right = rnn;
+
+        return node;
+    }
+
 
     public static void main(String[] args) throws IOException {
         Integer[] arr = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Integer[] arr1 = {50, 25, 12, null, null, 37, 30, null, null, null, 75, 62, null, 70, null, null, 87, null, null};
         Integer[] arr2 = {50, 25, 12, null, null, 37, 30, null, null, 40, null, null, 75, 62, 60, null, null, 70, null, null, 87, null, null};
+        Integer[] arr3 = {50 ,50 ,25 ,25, 12 ,12 ,null, null, null, null, 37 ,37 ,30 ,30 ,null, null, null, null, null, null, 75 ,75 ,62 ,62 ,null, null, 70 ,70, null, null, null, null, 87 ,87 ,null, null, null};
+
         Node root = construct(arr2);
-//        display(root);
-//        int size = size(root);
-//        int sum = sum(root);
-//        int max = max(root);
-//        int ht = height(root);
-//        System.out.println(size);
-//        System.out.println(sum);
-//        System.out.println(max);
-//        System.out.println(ht);
 
-//        traversal(root);
-//        levelOrder(root);
-//        iterativePrePostInTraversal(root);
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        System.out.println("Input -");
-//        int lo = Integer.parseInt(br.readLine());
-//        int hi = Integer.parseInt(br.readLine());
-
-//        boolean found = find(root, data);
-//        System.out.println(found);
-//
-//        ArrayList<Integer> path = nodeToRootPath(root, data);
-//        System.out.println(path);
-//        printKLevelsDown(root,data);
-//        ArrayList<Integer> res = KDistance(root, data);
-//        System.out.println(res);
-//        pathToLeafFromRoot(root, "", 0, lo, hi);
-        root = createLeftCloneTree(root);
+        root = transformBackLeftClonedTree(root);
         display(root);
     }
 }
