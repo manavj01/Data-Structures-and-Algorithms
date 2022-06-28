@@ -69,16 +69,16 @@ public class BipartiteGraph {
         return false;
     }
 
-    public static boolean dfsCheck(int src,  int[][] graph, int[] color) {
+    public static boolean dfsCheck(int src, int[][] graph, int[] color) {
 
-        if (color[src] == -1)color[src] =1;
+        if (color[src] == -1) color[src] = 1;
 
-        for (Integer it : graph[src]){
-            if(color[it] == -1){
+        for (Integer it : graph[src]) {
+            if (color[it] == -1) {
                 color[it] = 1 - color[src];
-                if (!dfsCheck(it, graph, color)){
+                if (!dfsCheck(it, graph, color)) {
                     return false;
-                }else if (color[src] == color[it]){
+                } else if (color[src] == color[it]) {
                     return false;
                 }
             }
