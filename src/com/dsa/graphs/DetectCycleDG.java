@@ -16,7 +16,7 @@ public class DetectCycleDG {
             adj.add(new ArrayList<>());
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 1; i++) {
             String[] parts = br.readLine().split(" ");
             int v1 = Integer.parseInt(parts[0]);
             int v2 = Integer.parseInt(parts[1]);
@@ -24,8 +24,10 @@ public class DetectCycleDG {
             adj.get(v1).add(v2);
 //            adj.get(v2).add(v1);
         }
-
-        boolean dfs = detectCycleDFS(V, adj);
+        int[][] prerequisites = new int[][]{
+                new int[]{1,0}
+        };
+        boolean dfs = detectCycleDFS(2, adj);
         System.out.println(dfs);
     }
 
