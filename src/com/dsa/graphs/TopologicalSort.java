@@ -1,13 +1,11 @@
 package com.dsa.graphs;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.*;
 
-
-public class DetectCycleDG {
+public class TopologicalSort {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int V = Integer.parseInt(br.readLine());
@@ -25,35 +23,38 @@ public class DetectCycleDG {
 //            adj.get(v2).add(v1);
         }
 
-        boolean dfs = detectCycleDFS(V, adj);
-        System.out.println(dfs);
+        int[] sort = topoSortDFS(adj, V);
+        System.out.println(Arrays.toString(sort));
     }
 
-    public static boolean detectCycleDFS(int V, ArrayList<ArrayList<Integer>> adj) {
+    public static int[] topoSortDFS(ArrayList<ArrayList<Integer>> adj, int V) {
+        ArrayList<Integer> topo = new ArrayList<>();
+        Stack<Integer> st = new Stack<>();
+
         boolean[] vis = new boolean[V];
-        boolean[] dfsVis = new boolean[V];
 
         for (int i = 0; i < V; i++) {
             if (!vis[i]) {
-                if (dfs(i, vis, dfsVis, adj)) return true;
+                dfs(i, vis, adj, st);
             }
         }
-        return false;
+        int[] s = new int[V];
+        int idx =0;
+       while (!st.isEmpty()){
+           s[idx] = st.pop();
+           idx++;
+       }
+        return s;
     }
 
-    public static boolean dfs(int src, boolean[] vis, boolean[] dfsVis, ArrayList<ArrayList<Integer>> adj) {
+    public static void dfs(int src, boolean[] vis, ArrayList<ArrayList<Integer>> adj, Stack<Integer> st) {
 
         vis[src] = true;
-        dfsVis[src] = true;
-
-        for (Integer it : adj.get(src)) {
+        for (int it : adj.get(src)) {
             if (!vis[it]) {
-                if (dfs(it, vis, dfsVis, adj)) return true;
-            } else if (dfsVis[it]) {
-                return true;
+              dfs(it,vis,adj,st);
             }
         }
-        dfsVis[src] = false;
-        return false;
+        st.push(src);
     }
 }
