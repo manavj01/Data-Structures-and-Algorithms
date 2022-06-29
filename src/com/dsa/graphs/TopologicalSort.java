@@ -57,4 +57,34 @@ public class TopologicalSort {
         }
         st.push(src);
     }
+    public static int[] topoSortBFS(ArrayList<ArrayList<Integer>> adj, int V){
+        int[] indegree = new int[V];
+        int[] topo = new int[V];
+
+        for (int i =0; i < V; i++){
+            for (Integer it : adj.get(i)){
+                indegree[it]++;
+            }
+        }
+
+        Queue<Integer> que = new LinkedList<>();
+        for (int i =0; i<V; i++){
+            if (indegree[i] == 0) que.add(i);
+        }
+
+        int ind =0;
+        while (!que.isEmpty()){
+            Integer node = que.poll();
+            topo[ind++] = node;
+
+            for (Integer it : adj.get(node)){
+                indegree[it]--;
+                if (indegree[it] == 0)
+                {
+                    que.add(it);
+                }
+            }
+        }
+        return topo;
+    }
 }
