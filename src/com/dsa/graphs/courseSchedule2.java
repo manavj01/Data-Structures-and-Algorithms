@@ -17,7 +17,6 @@ public class courseSchedule2 {
 
     public static int[] findOrder(int numCourses, int[][] prerequisites) {
 
-
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
             adj.add(new ArrayList<>());
