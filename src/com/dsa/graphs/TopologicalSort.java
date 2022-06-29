@@ -71,12 +71,12 @@ public class TopologicalSort {
         for (int i =0; i<V; i++){
             if (indegree[i] == 0) que.add(i);
         }
-
+//        int c =0;
         int ind =0;
         while (!que.isEmpty()){
             Integer node = que.poll();
             topo[ind++] = node;
-
+//            c++;
             for (Integer it : adj.get(node)){
                 indegree[it]--;
                 if (indegree[it] == 0)
@@ -85,6 +85,11 @@ public class TopologicalSort {
                 }
             }
         }
+//        if (c < V){
+//         to check for cycle if c is less than v
+//         there is a cycle
+//        }
         return topo;
+
     }
 }
