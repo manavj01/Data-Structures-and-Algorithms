@@ -14,7 +14,7 @@ public class TopologicalSort {
             adj.add(new ArrayList<>());
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 2; i++) {
             String[] parts = br.readLine().split(" ");
             int v1 = Integer.parseInt(parts[0]);
             int v2 = Integer.parseInt(parts[1]);
