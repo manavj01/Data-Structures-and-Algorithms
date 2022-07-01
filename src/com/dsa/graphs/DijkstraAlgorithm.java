@@ -62,9 +62,13 @@ public class DijkstraAlgorithm {
         }
 
         public int compare(Pair p1, Pair p2) {
-            if (p1.weight < p2.weight) return 1;
-            else if (p1.weight > p2.weight) return -1;
-            else return 0;
+            if (p1.weight < p2.weight) {
+                return 1;
+            } else if (p1.weight > p2.weight) {
+                return -1;
+            } else {
+                return 0;
+            }
         }
     }
 
@@ -103,31 +107,5 @@ public class DijkstraAlgorithm {
         return distance;
     }
 
-    static int[] dijkstra1(int v, ArrayList<ArrayList<ArrayList<Integer>>> adj, int s) {
-        // Write your code here
-
-        int[] dist = new int[v];
-        boolean[] vis = new boolean[v];
-        Arrays.fill(dist, Integer.MAX_VALUE);
-        PriorityQueue<Pair> pq = new PriorityQueue<>((p1, p2) -> Integer.compare(p1.weight, p2.weight));
-        dist[s] = 0;
-        vis[s] = true;
-        pq.offer(new Pair(s, 0));
-        while (!pq.isEmpty()) {
-            Pair currentPair = pq.poll();
-            int currNode = currentPair.vertex;
-            for (ArrayList<Integer> nbr : adj.get(currNode)) {
-                int nbrNode = nbr.get(0);
-                int nbrWt = nbr.get(1);
-                if (!vis[nbrNode] && dist[nbrNode] > dist[currNode] + nbrWt) {
-                    dist[nbrNode] = dist[currNode] + nbrWt;
-                    pq.add(new Pair(nbrNode, dist[nbrNode]));
-
-                }
-            }
-        }
-
-        return dist;
-    }
 }
 
