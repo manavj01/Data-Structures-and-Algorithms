@@ -67,9 +67,10 @@ public class PathWithMaximumProbability {
             adj.get(v).add(new Pair(u, wt));
 
         }
-        System.out.println(adj.get(0).get(0).getV() + " @ " + adj.get(0).get(0).getP() + " , " + adj.get(0).get(1).getV() + " @ " + adj.get(0).get(1).getP());
-        System.out.println(adj.get(1).get(0).getV() + " @ " + adj.get(1).get(0).getP() + " , " + adj.get(1).get(1).getV() + " @ " + adj.get(1).get(1).getP());
-        System.out.println(adj.get(2).get(0).getV() + " @ " + adj.get(2).get(0).getP() + " , " + adj.get(2).get(1).getV() + " @ " + adj.get(2).get(1).getP());
+
+//        System.out.println(adj.get(0).get(0).getV() + " @ " + adj.get(0).get(0).getP() + " , " + adj.get(0).get(1).getV() + " @ " + adj.get(0).get(1).getP());
+//        System.out.println(adj.get(1).get(0).getV() + " @ " + adj.get(1).get(0).getP() + " , " + adj.get(1).get(1).getV() + " @ " + adj.get(1).get(1).getP());
+//        System.out.println(adj.get(2).get(0).getV() + " @ " + adj.get(2).get(0).getP() + " , " + adj.get(2).get(1).getV() + " @ " + adj.get(2).get(1).getP());
 
         HashSet<Integer> pst = new HashSet<>();
 
