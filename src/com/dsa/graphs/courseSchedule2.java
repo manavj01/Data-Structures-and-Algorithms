@@ -104,10 +104,10 @@ public class courseSchedule2 {
         for (int[] prerequisite : prerequisites) {
             adj.get(prerequisite[0]).add(prerequisite[1]);
         }
-        int [] topolist = topoSortBFS(adj,numCourses);
-        if(topolist.length<numCourses){
+        int[] topolist = topoSortBFS(adj, numCourses);
+        if (topolist.length < numCourses) {
             return new int[0];
-        }else return topolist;
+        } else return topolist;
     }
 
     // alternative approach
@@ -139,7 +139,7 @@ public class courseSchedule2 {
             }
         }
 //        if (c < V){
-//         to check for cycle if c is less than v
+//         to check for cycle if c is less than edge
 //         there is a cycle
 //        }
         return topo;
