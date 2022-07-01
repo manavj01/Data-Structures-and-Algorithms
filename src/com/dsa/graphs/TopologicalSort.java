@@ -39,11 +39,11 @@ public class TopologicalSort {
             }
         }
         int[] s = new int[V];
-        int idx =0;
-       while (!st.isEmpty()){
-           s[idx] = st.pop();
-           idx++;
-       }
+        int idx = 0;
+        while (!st.isEmpty()) {
+            s[idx] = st.pop();
+            idx++;
+        }
         return s;
     }
 
@@ -52,41 +52,41 @@ public class TopologicalSort {
         vis[src] = true;
         for (int it : adj.get(src)) {
             if (!vis[it]) {
-              dfs(it,vis,adj,st);
+                dfs(it, vis, adj, st);
             }
         }
         st.push(src);
     }
-    public static int[] topoSortBFS(ArrayList<ArrayList<Integer>> adj, int V){
+
+    public static int[] topoSortBFS(ArrayList<ArrayList<Integer>> adj, int V) {
         int[] indegree = new int[V];
         int[] topo = new int[V];
 
-        for (int i =0; i < V; i++){
-            for (Integer it : adj.get(i)){
+        for (int i = 0; i < V; i++) {
+            for (Integer it : adj.get(i)) {
                 indegree[it]++;
             }
         }
 
         Queue<Integer> que = new LinkedList<>();
-        for (int i =0; i<V; i++){
+        for (int i = 0; i < V; i++) {
             if (indegree[i] == 0) que.add(i);
         }
 //        int c =0;
-        int ind =0;
-        while (!que.isEmpty()){
+        int ind = 0;
+        while (!que.isEmpty()) {
             Integer node = que.poll();
             topo[ind++] = node;
 //            c++;
-            for (Integer it : adj.get(node)){
+            for (Integer it : adj.get(node)) {
                 indegree[it]--;
-                if (indegree[it] == 0)
-                {
+                if (indegree[it] == 0) {
                     que.add(it);
                 }
             }
         }
 //        if (c < V){
-//         to check for cycle if c is less than v
+//         to check for cycle if c is less than edge
 //         there is a cycle
 //        }
         return topo;
