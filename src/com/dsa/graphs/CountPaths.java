@@ -1,79 +1,96 @@
 package com.dsa.graphs;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
 
 public class CountPaths {
     public static class Edge {
-        int src;
-        int nbr;
-        int wt;
 
-        Edge(int src, int nbr, int wt) {
-            this.src = src;
-            this.nbr = nbr;
-            this.wt = wt;
+        int node;
+        int dist;
+
+        Edge() {
         }
+
+        Edge(int nbr, int dist) {
+
+            this.node = nbr;
+            this.dist = dist;
+        }
+
+//        public int compare(Edge e1, Edge e2) {
+//            return Integer.compare(e1.dist, e2.dist);
+//        }
 
     }
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine().trim());
-
-        ArrayList<ArrayList<Integer>> adj;
-        while (T-- > 0) {
-            String[] s = br.readLine().trim().split(" ");
-            int V = Integer.parseInt(s[0]);
-            int E = Integer.parseInt(s[1]);
-            adj = new ArrayList<>();
-            for (int i = 0; i < V; i++) {
-                adj.add(i, new ArrayList<Integer>());
-            }
-            for (int i = 0; i < E; i++) {
-                String[] S = br.readLine().trim().split(" ");
-                int u = Integer.parseInt(S[0]);
-                int v = Integer.parseInt(S[1]);
-                adj.get(u).add(v);
-            }
-            String[] s1 = br.readLine().trim().split(" ");
-            int source = Integer.parseInt(s1[0]);
-            int destination = Integer.parseInt(s1[1]);
-            countPaths(V, adj, source, destination);
-        }
+        int[][] roads = new int[][]{
+                new int[]{0, 6, 7},
+                new int[]{0, 1, 2},
+                new int[]{1, 2, 3},
+                new int[]{1, 3, 3},
+                new int[]{6, 3, 3},
+                new int[]{3, 5, 1},
+                new int[]{6, 5, 1},
+                new int[]{2, 5, 1},
+                new int[]{0, 4, 5},
+                new int[]{4, 6, 2},
+//                new int[]{1, 0, 10}
+        };
+        int V = 7;
+        System.out.println(countPaths(V, roads));
     }
 
-    static int count;
 
-    public static int countPaths(int V, ArrayList<ArrayList<Integer>> adj, int source, int destination) {
+    public static int countPaths(int n, int[][] roads) {
+        int mod = (int) Math.pow(10, 9) + 7;
 
-        boolean[] visited = new boolean[V];
-        helper(V, adj, source, destination, visited, count);
-        return count;
-    }
+        ArrayList<ArrayList<Edge>> adj = new ArrayList<>();
 
-    public static boolean helper(int V, ArrayList<ArrayList<Integer>> adj, int src, int desc, boolean[] visited, int count) {
+        for (int i = 0; i < n; i++) adj.add(new ArrayList<>());
 
-        ArrayList<Integer>[] graph = new ArrayList[V];
+        for (int[] it : roads) {
+            int from = it[0];
+            int to = it[1];
+            int dis = it[2];
 
-        for (int i = 0; i < V; i++) {
-            graph[i] = new ArrayList<>();
-        }
-        for (ArrayList<Integer> edge : adj) {
-            graph[edge.get(0)].add(edge.get(1));
-            graph[edge.get(1)].add(edge.get(0));
-        }
-        if (src == desc) {
-            count++;
-            return true;
+            adj.get(from).add(new Edge(to, dis));
+            adj.get(to).add(new Edge(from, dis));
         }
 
-        visited[src] = true;
+        PriorityQueue<Edge> pq = new PriorityQueue<>((aa, bb) -> aa.dist - bb.dist);
+        pq.add(new Edge(0, 0));
 
+        long[] ways = new long[n];
+        ways[0] = 1;
 
-        return false;
+        int[] distance = new int[n];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+        distance[0] = 0;
+
+        while (!pq.isEmpty()) {
+            Edge p = pq.poll();
+            int node = p.node;
+            int dis = p.dist;
+
+            for (Edge it : adj.get(node)) {
+                if ((dis + it.dist) < distance[it.node]) {
+                    ways[it.node] = ways[node];
+                    distance[it.node] = dis + it.dist;
+                    pq.add(new Edge(it.node, distance[it.node]));
+                } else if ((dis + it.dist) == distance[it.node]) {
+                    ways[it.node] = ways[it.node] + ways[node];
+                    ways[it.node] = ways[it.node] % mod;
+                }
+            }
+        }
+
+        return (int) ways[n - 1];
     }
 
 }
