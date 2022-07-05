@@ -14,9 +14,10 @@ class Dog {
 
 public class Main {
     public static void main(String[] args) {
-        Integer sum = 0;
-        foo(sum);
-        System.out.println(sum == 0);
+//        Integer sum = 0;
+//        foo(sum);
+//        System.out.println(sum == 0);
+
     }
 
     public static void foo(Integer s) {
@@ -58,8 +59,4 @@ public class Main {
 //        return d;
 //    }
 
-    public static void sum(int hi, int lo, int s) {
-
-        s = lo + hi;
-    }
 }
