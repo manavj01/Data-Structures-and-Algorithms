@@ -36,9 +36,9 @@ public class HasPath {
 //            String[] parts = br.readLine().split(" ");
 //            int v1 = Integer.parseInt(parts[0]);
 //            int v2 = Integer.parseInt(parts[1]);
-//            int wt = Integer.parseInt(parts[2]);
-//            graph[v1].add(new Edge(v1, v2, wt));
-//            graph[v2].add(new Edge(v2, v1, wt));
+//            int dist = Integer.parseInt(parts[2]);
+//            graph[v1].add(new Edge(v1, v2, dist));
+//            graph[v2].add(new Edge(v2, v1, dist));
 //        }
 
         int src = Integer.parseInt(br.readLine());
@@ -46,7 +46,6 @@ public class HasPath {
 //        boolean[] visited = new boolean[vtces];
 //        boolean path = hasPaths(graph, src, dest, visited);
 //        System.out.println(path);
-
 
 
     }
@@ -67,7 +66,6 @@ public class HasPath {
         }
         return false;
     }
-
 
 
 }

@@ -14,7 +14,7 @@ public class DijkstraAlgorithm {
         int t = Integer.parseInt(read.readLine());
 
         while (t-- > 0) {
-            String str[] = read.readLine().trim().split(" ");
+            String[] str = read.readLine().trim().split(" ");
             int V = Integer.parseInt(str[0]);
             int E = Integer.parseInt(str[1]);
             ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();
@@ -25,7 +25,7 @@ public class DijkstraAlgorithm {
 
             int i = 0;
             while (i++ < E) {
-                String S[] = read.readLine().trim().split(" ");
+                String[] S = read.readLine().trim().split(" ");
                 int u = Integer.parseInt(S[0]);
                 int v = Integer.parseInt(S[1]);
                 int w = Integer.parseInt(S[2]);
@@ -62,13 +62,7 @@ public class DijkstraAlgorithm {
         }
 
         public int compare(Pair p1, Pair p2) {
-            if (p1.weight < p2.weight) {
-                return 1;
-            } else if (p1.weight > p2.weight) {
-                return -1;
-            } else {
-                return 0;
-            }
+            return Integer.compare(p2.weight, p1.weight);
         }
     }
 
