@@ -3,7 +3,7 @@ package com.dsa.graphs;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ShortestDistanceInUG {
 
@@ -11,6 +11,18 @@ public class ShortestDistanceInUG {
         int edge;
         int nbr;
         int wt;
+
+        Pair() {
+        }
+
+        Pair(int nbr, int wt) {
+            this.nbr = nbr;
+            this.wt = wt;
+        }
+
+        int getNbr(int nbr) {
+            return this.nbr = nbr;
+        }
 
         Pair(int edge, int nbr, int wt) {
             this.edge = edge;
@@ -40,8 +52,6 @@ public class ShortestDistanceInUG {
             adj.get(nbr).add(v);
 
         }
-
-
         System.out.println(adj.get(0).get(0).edge + "-" + adj.get(0).get(0).nbr + " @ " + adj.get(0).get(0).wt);
         System.out.println(adj.get(0).get(1).edge + "-" + adj.get(0).get(1).nbr + " @ " + adj.get(0).get(1).wt);
         System.out.println(adj.get(1).get(0).edge + "-" + adj.get(1).get(0).nbr + " @ " + adj.get(1).get(0).wt);
@@ -49,9 +59,41 @@ public class ShortestDistanceInUG {
         System.out.println(adj.get(2).get(0).edge + "-" + adj.get(2).get(0).nbr + " @ " + adj.get(2).get(0).wt);
         System.out.println(adj.get(2).get(1).edge + "-" + adj.get(2).get(1).nbr + " @ " + adj.get(2).get(1).wt);
         System.out.println(adj);
+
     }
-//    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
-//    {
-//
-//    }
+
+    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int s) {
+        //create a distance array
+        //initialize it with integer.maxvalue
+        //create a priority Queue
+        //add a source node to it with its distance in distance array
+        //find all the adjacent nodes
+        //check if dis[adjacentNode] > distance.source node + adjacent node distance
+        //add in priority Queue
+
+        int[] distance = new int[V];
+        Arrays.fill(distance, Integer.MAX_VALUE);
+
+        PriorityQueue<DijkstraAlgorithm.Pair> pq = new PriorityQueue<>(V, new DijkstraAlgorithm.Pair());
+
+        distance[s] = 0;
+        pq.offer(new DijkstraAlgorithm.Pair(s, 0));
+        while (!pq.isEmpty()) {
+            DijkstraAlgorithm.Pair node = pq.poll();
+
+            ArrayList<ArrayList<Integer>> list = adj.get(node.vertex);
+            for (ArrayList<Integer> lists : list) {
+                int adjVertex = lists.get(0);
+                int adjWeight = lists.get(1);
+
+                if (distance[adjVertex] > node.weight + adjWeight) {
+                    distance[adjVertex] = node.weight + adjWeight;
+                    pq.offer(new DijkstraAlgorithm.Pair(adjVertex, distance[adjVertex]));
+                }
+            }
+        }
+        return distance;
+    }
+
+
 }

@@ -89,7 +89,7 @@ public class PathWithMaximumProbability {
 
             if (adj.get(vtx) != null) {
                 for (Pair it : adj.get(vtx)) {
-                    if (pst.contains(it.getV()) == false) {
+                    if (!pst.contains(it.getV())) {
                         pq.add(new Pair(it.getV(), pb * it.getP()));
                     }
                 }
