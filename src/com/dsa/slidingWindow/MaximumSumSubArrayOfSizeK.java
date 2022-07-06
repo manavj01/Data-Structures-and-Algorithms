@@ -33,7 +33,7 @@ public class MaximumSumSubArrayOfSizeK {
     public static long maximumSumSubArray1(int K, ArrayList<Integer> Arr, int N) {
 
         int i = 0, j = 0;
-        long sum = 0, maxi = Integer.MIN_VALUE;
+        long sum = 0, maxi = Long.MIN_VALUE;
         while (j < N) {
             sum += Arr.get(j);
             if (j - i == K - 1) {
