@@ -17,7 +17,8 @@ public class Main {
 //        Integer sum = 0;
 //        foo(sum);
 //        System.out.println(sum == 0);
-
+        int n = 80773737;
+        System.out.println((int) Math.floor(Math.log10(n)));
     }
 
     public static void foo(Integer s) {
