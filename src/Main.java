@@ -19,8 +19,11 @@ public class Main {
 //        System.out.println(sum == 0);
 //        int n = 80773737;
 //        System.out.println((int) Math.floor(Math.log10(n)));
-
-
+        int j =6;
+        for (int i=0,max=j; i < 5; i++){
+            max++;
+            System.out.println(max);
+        }
     }
 
     public static void foo(Integer s) {
