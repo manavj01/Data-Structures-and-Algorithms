@@ -1,4 +1,4 @@
-package com.dsa.striver30daysSheet;
+package com.dsa.striver30daysSheet.arrays;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.dsa.striver30daysSheet;
+package com.dsa.striver30daysSheet.arrays;
 
 public class BestTime2BuyAndSellStock {
     public static void main(String[] args) {

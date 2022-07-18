@@ -1,4 +1,4 @@
-package com.dsa.striver30daysSheet;
+package com.dsa.striver30daysSheet.arrays;
 
 public class MaximumSubarray {
     public static void main(String[] args) {
