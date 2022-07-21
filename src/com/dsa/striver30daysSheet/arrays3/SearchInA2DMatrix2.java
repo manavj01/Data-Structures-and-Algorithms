@@ -1,11 +1,13 @@
 package com.dsa.striver30daysSheet.arrays3;
 
-public class SearchInA2DMatrix {
+public class SearchInA2DMatrix2 {
     public static void main(String[] args) {
-        int[][] arr = new int[][]{{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
-        int target = 3;
+        int[][] arr = new int[][]{{1, 4, 7, 11, 15}, {2, 5, 8, 12, 19},
+                {3, 6, 9, 16, 22}, {10, 13, 14, 17, 24}, {18, 21, 23, 26, 30}};
+        int target = 5;
         System.out.println(searchMatrix(arr, target));
     }
+
 
     public static boolean searchMatrix1(int[][] arr, int target) {
 
@@ -25,20 +27,21 @@ public class SearchInA2DMatrix {
         int n = arr.length;
         int m = arr[0].length;
 
-        int lo = 0;
-        int hi = (n * m) - 1;
+        int i = 0;
+        int j = m - 1;
 
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            if (arr[mid / m][mid % m] == target) {
+            while ( i < n && j >= 0) {
+            if (arr[i][j] == target){
                 return true;
-            }else if (arr[mid / m][mid % m] < target) {
-                lo = mid + 1;
-            } else {
-                hi = mid - 1;
+            } else if (arr[i][j] > target) {
+                j--;
+            } else if (arr[i][j] < target) {
+                i++;
             }
         }
-        return false;
 
+        return false;
     }
+
+
 }
