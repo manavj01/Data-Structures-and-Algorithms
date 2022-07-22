@@ -2,18 +2,18 @@ package com.dsa.striver30daysSheet.arrays3;
 
 public class PowXOfN {
     public static void main(String[] args) {
-        double x = 2;
-        int n = 10;
+        double x = 2.00000;
+        int n = -2;
 
         System.out.println(myPow(x, n));
     }
 
     public static double myPow(double x, int n) {
         double ans = 1.0;
-        long nn = n;
+        double nn = n;
 
         if (nn < 0) {
-            nn = -1 / nn;
+            nn = -1 * nn;
         }
 
         while (nn > 0) {
