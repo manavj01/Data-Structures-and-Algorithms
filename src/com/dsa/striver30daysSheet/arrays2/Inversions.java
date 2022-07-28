@@ -1,8 +1,13 @@
 package com.dsa.striver30daysSheet.arrays2;
 
+import java.util.ArrayList;
+
 public class Inversions {
     public static void main(String[] args) {
-        long[] arr = new long[]{2, 4, 1, 3, 5};
+        long[] arr = new long[]{84, 2, 37, 3, 67, 82, 19, 97, 91, 63,
+                27, 6, 13, 90, 63, 89, 100, 60, 47, 96,
+                54, 26, 64, 50, 71, 16, 6, 40, 84, 93,
+                67, 85, 16, 22, 60};
 
         System.out.println(countInversions(arr));
 
