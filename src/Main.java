@@ -2,6 +2,8 @@ import com.dsa.twodarrays.SearchInA2dArray;
 import com.dsa.utility.Util;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 class Dog {
@@ -24,11 +26,18 @@ public class Main {
 //            max++;
 //            System.out.println(max);
 //        }
-            final int a=5;
-        for (int i=0;i < 5; i++){
-//            a=i;
-            System.out.println(a);
-        }
+//            final int a=5;
+//        for (int i=0;i < 5; i++){
+////            a=i;
+//            System.out.println(a);
+        List<List<Integer>> lists = new ArrayList<>();
+        List<Integer> list = new ArrayList<>(Arrays.asList(new Integer[4]));
+        list.add(1);
+        list.add(1);
+        list.add(1);
+        list.add(1);
+        lists.add(list);
+        System.out.println(lists.size());
     }
 
     public static void foo(Integer s) {
