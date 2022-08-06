@@ -30,14 +30,20 @@ public class Main {
 //        for (int i=0;i < 5; i++){
 ////            a=i;
 //            System.out.println(a);
-        List<List<Integer>> lists = new ArrayList<>();
-        List<Integer> list = new ArrayList<>(Arrays.asList(new Integer[4]));
-        list.add(1);
-        list.add(1);
-        list.add(1);
-        list.add(1);
-        lists.add(list);
-        System.out.println(lists.size());
+//        List<List<Integer>> lists = new ArrayList<>();
+//        List<Integer> list = new ArrayList<>(Arrays.asList(new Integer[4]));
+//        list.add(1);
+//        list.add(1);
+//        list.add(1);
+//        list.add(1);
+//        lists.add(list);
+//        System.out.println(lists.size());
+        List<Integer> myList = new ArrayList<>();
+        myList.add(10);
+        myList.add(20);
+        myList.add(30);
+        List<Integer> list = new ArrayList<>(myList);
+        System.out.println(list);
     }
 
     public static void foo(Integer s) {
