@@ -12,7 +12,6 @@ public class MergeTwoSortedLists {
             l2 = temp;
         }
 
-
         Node res_node = l1;
 
         while (l1 != null && l2 != null) {
