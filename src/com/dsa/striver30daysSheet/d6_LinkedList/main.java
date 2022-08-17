@@ -1,4 +1,4 @@
-package com.dsa.striver30daysSheet.d5_LinkedList;
+package com.dsa.striver30daysSheet.d6_LinkedList;
 
 
 import java.util.Scanner;
@@ -33,7 +33,7 @@ class Function {
         Node[] arr = new Node[n];
         int idx = 0;
         while (n > 0) {
-            System.out.println("Enter " + idx + 1 + " List");
+            System.out.println("Enter " + idx + " List");
             int len = scn.nextInt();
             Node head = new Node(scn.nextInt());
             Node tail = head;
@@ -45,11 +45,11 @@ class Function {
             arr[idx++] = head;
             System.out.println("-----");
         }
-
-        MergeTwoSortedLists moll = new MergeTwoSortedLists();
-        Node ans = moll.Lists(arr[0], arr[1]);
+        IntersectionOfTwoLinkedList obj = new IntersectionOfTwoLinkedList();
+//        Node ans = obj.getIntersectionNode(arr[0],arr[1]);
+//        System.out.println(ans.data);
 //            System.out.println(ans.data);
-        printList(ans);
+//        printList(ans);
 //            t--;
 //        }
     }
