@@ -8,7 +8,7 @@ public class CountSort {
         int[] farr = new int[range];
         int[] ans = new int[arr.length];
 
-        // Make frequence array
+        // Make frequency array
         for (int i = 0; i < arr.length; i++) {
             int idx = arr[i] - min;
             farr[idx]++;
