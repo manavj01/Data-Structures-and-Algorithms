@@ -29,9 +29,12 @@ public class BubbleSort {
     }
 
     public static void print(int[] arr) {
+        System.out.print("[ ");
         for (int j : arr) {
-            System.out.println(j);
+            System.out.print(j + " ,");
         }
+        System.out.print(" ]");
+
     }
 
     public static void main(String[] args) throws Exception {
