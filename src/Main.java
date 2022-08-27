@@ -38,12 +38,21 @@ public class Main {
 //        list.add(1);
 //        lists.add(list);
 //        System.out.println(lists.size());
-        List<Integer> myList = new ArrayList<>();
-        myList.add(10);
-        myList.add(20);
-        myList.add(30);
-        List<Integer> list = new ArrayList<>(myList);
-        System.out.println(list);
+//        List<Integer> myList = new ArrayList<>();
+//        myList.add(10);
+//        myList.add(20);
+//        myList.add(30);
+////        int[] abc = new int[]{1,2,3};
+//        List<Integer> list = new ArrayList<>(myList);
+//        System.out.println(list);
+        int[] arr = new int[10];
+        printArray(arr);
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i : arr) {
+            System.out.println(i);
+        }
     }
 
     public static void foo(Integer s) {
