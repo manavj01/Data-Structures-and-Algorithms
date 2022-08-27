@@ -7,10 +7,12 @@ import java.util.PriorityQueue;
 
 public class NMeetingInOneRoom {
     public static void main(String[] args) {
-        int[] start = new int[]{75, 50, 43, 8, 11, 27, 50, 77};
-        int[] end = new int[]{112, 114, 81, 93, 54, 35, 73, 160};
+//        int[] start = new int[]{75, 50, 43, 8, 11, 27, 50, 77};
+//        int[] end = new int[]{112, 114, 81, 93, 54, 35, 73, 160};
+        int[] start = {1, 3, 0, 5, 8, 5};
+        int[] end = {2, 4, 6, 7, 9, 9};
         int n = 8;
-        System.out.println(maxMeetings(start, end, n));
+        System.out.println(maxMeetings1(start, end, n));
 
     }
 
@@ -51,7 +53,7 @@ public class NMeetingInOneRoom {
     }
 
     // aproach 2
-    class meeting {
+    static class meeting {
         int start;
         int end;
         int pos;
@@ -76,7 +78,7 @@ public class NMeetingInOneRoom {
         }
     }
 
-    void maxMeetings1(int start[], int end[], int n) {
+    static int maxMeetings1(int[] start, int[] end, int n) {
         ArrayList<meeting> meet = new ArrayList<>();
 
         for (int i = 0; i < start.length; i++)
@@ -94,10 +96,12 @@ public class NMeetingInOneRoom {
                 answer.add(meet.get(i).pos);
             }
         }
-        System.out.println("The order in which the meetings will be performed is ");
-        for (int i = 0; i < answer.size(); i++) {
-            System.out.print(answer.get(i) + " ");
-        }
+//        System.out.println("The order in which the meetings will be performed is ");
+//        for (Integer integer : answer) {
+//            System.out.print(integer + " ");
+//        }
+
+        return answer.size();
     }
 
 }
