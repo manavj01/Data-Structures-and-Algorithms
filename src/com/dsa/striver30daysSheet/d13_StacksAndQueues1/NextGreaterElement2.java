@@ -1,4 +1,4 @@
-package com.dsa.striver30daysSheet.d13_StacksAndQueues;
+package com.dsa.striver30daysSheet.d13_StacksAndQueues1;
 
 import java.util.Arrays;
 import java.util.Stack;
