@@ -6,7 +6,28 @@ import java.util.Map;
 public class CopyListWithRandomPointer {
 
     public static void main(String[] args) {
+        Node head = new Node(7);
 
+
+        head.next = new Node(13);
+        head.next.next = new Node(11);
+        head.next.next.next = new Node(10);
+        head.next.next.next.next = new Node(1);
+
+        head.random = null;
+        head.next.random = head;
+        head.next.next.random = head.next.next.next.next;
+        head.next.next.next.random = head.next.next;
+        head.next.next.next.next.random = head;
+
+        Node ans = copyRandomList1(head);
+
+        while (ans != null) {
+            System.out.print("val - " + ans.val + " ");
+            System.out.print(ans.random == null ? null : ans.random.val);
+            System.out.println();
+            ans = ans.next;
+        }
     }
 
     static class Node {
