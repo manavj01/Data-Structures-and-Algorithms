@@ -8,8 +8,8 @@ public class DynamicQueue {
         int front;
         int size;
 
-        public CustomQueue(int cap) {
-            data = new int[cap];
+        public CustomQueue() {
+            data = new int[3];
             front = 0;
             size = 0;
         }
@@ -32,7 +32,7 @@ public class DynamicQueue {
         void add(int val) {
             // write ur code here
             if (size == data.length) {
-                int ndata[] = new int[2 * data.length];
+                int[] ndata = new int[2 * data.length];
                 for (int i = 0; i < ndata.length; i++) {
                     int idx = (front + i) % data.length;
                     ndata[i] = data[idx];
@@ -78,8 +78,8 @@ public class DynamicQueue {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        CustomQueue qu = new CustomQueue(n);
+//        int n = Integer.parseInt(br.readLine());
+        CustomQueue qu = new CustomQueue();
 
         String str = br.readLine();
         while (str.equals("quit") == false) {
