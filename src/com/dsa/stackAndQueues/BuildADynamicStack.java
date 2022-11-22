@@ -63,8 +63,8 @@ public class BuildADynamicStack {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        CustomStack st = new CustomStack(n);
+//        int n = Integer.parseInt(br.readLine());
+        CustomStack st = new CustomStack(3);
 
         String str = br.readLine();
         while (str.equals("quit") == false) {
