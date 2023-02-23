@@ -11,7 +11,7 @@ public class MergeKSortedArrays {
         list.add(new ArrayList<>(Arrays.asList(45, 90)));
         list.add(new ArrayList<>(Arrays.asList(2, 6, 78, 100, 234)));
 
-        System.out.println(mergeKSortedArrays(list, 3));
+        System.out.println(solve(list, 3));
 
     }
 
@@ -40,10 +40,32 @@ public class MergeKSortedArrays {
             this.di = di;
             this.val = val;
         }
-        public int compareTo(Pair o){
+
+        public int compareTo(Pair o) {
             return this.val - o.val;
         }
     }
+
+    public static ArrayList<Integer> solve(ArrayList<ArrayList<Integer>> kArrays, int k) {
+        ArrayList<Integer> result = new ArrayList<>();
+        PriorityQueue<Pair> pque = new PriorityQueue<>();
+        for (int i = 0; i < k; i++) {
+            Pair p = new Pair(i, 0, kArrays.get(i).get(0));
+            pque.add(p);
+        }
+        while (!pque.isEmpty()){
+            Pair tba = pque.poll();
+            int li = tba.li;
+            int di = tba.di;
+            result.add(tba.val);
+            if(di+1 < kArrays.get(li).size() ) {
+                pque.add(new Pair(li, di + 1, kArrays.get(li).get(di + 1)));
+            }
+        }
+
+        return result;
+    }
+
 
     public static ArrayList<Integer> mergeKSortedArrays(ArrayList<ArrayList<Integer>> kArrays, int k) {
         ArrayList<Integer> res = new ArrayList<>();
@@ -55,10 +77,10 @@ public class MergeKSortedArrays {
 
         while (!pq.isEmpty()) {
             Pair tba = pq.poll();
-            res.add(tba.val );
+            res.add(tba.val);
             tba.di++;
 
-            if (tba.di < kArrays.get(tba.li).size()){
+            if (tba.di < kArrays.get(tba.li).size()) {
                 tba.val = kArrays.get(tba.li).get(tba.di);
                 pq.add(tba);
             }
@@ -67,4 +89,5 @@ public class MergeKSortedArrays {
 
         return res;
     }
+
 }

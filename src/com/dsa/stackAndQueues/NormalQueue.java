@@ -51,7 +51,7 @@ public class NormalQueue {
                 return val;
             }
         }
-
+//  2 3 4
         int peek() {
             // write ur code here
             if (size == 0) {
