@@ -1,0 +1,46 @@
+ Different ways to sort using Comparator
+
+        1st
+      plat.sort(Comparator.comparingInt(o -> o.dep));
+
+        2nd
+        plat.sort((o1, o2) -> o1.dep - o2.dep);
+
+         3rd
+ plat.sort(new Comparator<Platform>() {
+@Override
+public int compare(Platform o1, Platform o2) {
+        return o1.dep - o2.dep;
+        }
+        });
+
+         4th
+  Collections.sort(plat, new Comparator<Platform>() {
+@Override
+public int compare(Platform o1, Platform o2) {
+        return o1.dep - o2.dep;
+        }
+        });
+
+
+
+** Making comparator class
+
+         static class Platform {
+                int arr;
+                int dep;
+
+                Platform(int arr, int dep) {
+                    this.arr = arr;
+                    this.dep = dep;
+                }
+
+            }
+
+            public static class PlatformComparator implements Comparator<Platform> {
+
+                @Override
+                public int compare(Platform o1, Platform o2) {
+                    return o1.dep - o2.dep;
+                }
+            }
