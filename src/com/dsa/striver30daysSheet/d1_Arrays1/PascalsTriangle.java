@@ -6,7 +6,7 @@ import java.util.List;
 
 public class PascalsTriangle {
     public static void main(String[] args) {
-        List<List<Integer>> ans = generate1(5);
+        List<List<Integer>> ans = generate(5);
         System.out.println(ans);
     }
 
@@ -23,7 +23,7 @@ public class PascalsTriangle {
             if (i >= 2) {
                 int i1 = 0;
                 int i2 = 1;
-                for (int idx = si + 1; idx < ei; idx++) {
+                for (int idx = 1 ; idx < ei; idx++) {
                     arr[idx] = res.get(i - 1).get(i1) + res.get(i - 1).get(i2);
                     i1++;
                     i2++;

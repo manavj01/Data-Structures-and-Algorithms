@@ -1,12 +1,14 @@
  Different ways to sort using Comparator
 
-        1st
+1st
       plat.sort(Comparator.comparingInt(o -> o.dep));
 
-        2nd
+2nd
+
         plat.sort((o1, o2) -> o1.dep - o2.dep);
 
-         3rd
+3rd
+
  plat.sort(new Comparator<Platform>() {
 @Override
 public int compare(Platform o1, Platform o2) {
@@ -14,7 +16,8 @@ public int compare(Platform o1, Platform o2) {
         }
         });
 
-         4th
+
+4th
   Collections.sort(plat, new Comparator<Platform>() {
 @Override
 public int compare(Platform o1, Platform o2) {
